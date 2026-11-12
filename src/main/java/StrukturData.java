@@ -5,5 +5,7 @@ public interface StrukturData<T> {
     int size();
     boolean isEmpty();
     boolean validateIvariant();
+
+    boolean validateInvariant();
 }
 
