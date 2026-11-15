@@ -4,7 +4,7 @@ public class MainTest {
     private static int gagal = 0;
 
     public static void main(String[] args) {
-        System.out.println("=== MENJALANKAN SUITE PENGUJIAN (7 SKENARIO WAJIB) ===");
+        System.out.println("=== MENJALANKAN SUITE PENGUJIAN (9 SKENARIO) ===");
 
         test1_EkspansiKapasitasArrayDinamis();
         test2_TambahPutusanDanTolakDuplikatCaseId();
@@ -13,6 +13,8 @@ public class MainTest {
         test5_UbahVonisDanPencatatanStackAudit();
         test6_HapusDataDanPemulihanUndoStack();
         test7_ParsingCsvDenganTandaKutipDanKoma();
+        test8_StrukturDataGenerikDanValidateInvariant();
+        test9_FilterMultiKriteriaLanjutan();
 
         System.out.println("\n=== RINGKASAN HASIL PENGUJIAN ===");
         System.out.println("Total Skenario : " + (lulus + gagal));
@@ -48,13 +50,13 @@ public class MainTest {
     }
 
     private static void test1_EkspansiKapasitasArrayDinamis() {
-        ArrayDinamis arr = new ArrayDinamis(2);
-        arr.tambah(buatSampel("1", "Sabu", 0.6087, 72, 72, 4000000000L));
-        arr.tambah(buatSampel("2", "Sabu", 2.1169, 96, 84, 1000000000L));
-        arr.tambah(buatSampel("3", "Sabu", 412.76, 204, 180, 2000000000L));
+        ArrayDinamis<Putusan> arr = new ArrayDinamis<>(2);
+        arr.add(buatSampel("1", "Sabu", 0.6087, 72, 72, 4000000000L));
+        arr.add(buatSampel("2", "Sabu", 2.1169, 96, 84, 1000000000L));
+        arr.add(buatSampel("3", "Sabu", 412.76, 204, 180, 2000000000L));
 
-        assertTrue(arr.ukuran() == 3 && arr.kapasitas() == 4 && arr.ambil(2).getCaseId().equals("3"),
-                "Skenario 1: Ekspansi otomatis kapasitas ArrayDinamis (2 -> 4)");
+        assertTrue(arr.size() == 3 && arr.kapasitas() == 4 && arr.get(2).getCaseId().equals("3"),
+                "Skenario 1: Ekspansi otomatis kapasitas ArrayDinamis<Putusan> (2 -> 4)");
     }
 
     private static void test2_TambahPutusanDanTolakDuplikatCaseId() {
@@ -85,10 +87,10 @@ public class MainTest {
 
         Putusan ditemukan = pengelola.cariByCaseId("2");
         Putusan tidakAda = pengelola.cariByCaseId("999");
-        ArrayDinamis rentang = pengelola.filterRentangVonis(70, 90);
+        ArrayDinamis<Putusan> rentang = pengelola.filterRentangVonis(70, 90);
 
         assertTrue(ditemukan != null && ditemukan.getVonisBulan() == 84
-                        && tidakAda == null && rentang.ukuran() == 2,
+                        && tidakAda == null && rentang.size() == 2,
                 "Skenario 4: Pencarian caseId eksak & filter rentang vonis");
     }
 
@@ -126,5 +128,41 @@ public class MainTest {
                         && kolom[12].contains("0,6087 gram")
                         && kolom[16].equals("Direktori Putusan Mahkamah Agung RI"),
                 "Skenario 7: Parsing 17 kolom CSV aman terhadap koma di dalam tanda kutip");
+    }
+
+    private static void test8_StrukturDataGenerikDanValidateInvariant() {
+        StrukturData<String> daftarGenerik = new ArrayDinamis<>(2);
+        daftarGenerik.add("Item-A");
+        daftarGenerik.add("Item-B");
+        daftarGenerik.add("Item-C");
+        String terhapus = daftarGenerik.remove(1);
+
+        StrukturData<String> stackGenerik = new StackAudit<>();
+        stackGenerik.add("Log-1");
+        stackGenerik.add("Log-2");
+        String puncak = stackGenerik.remove(0);
+
+        PengelolaPutusan pengelola = new PengelolaPutusan();
+        pengelola.tambahPutusan(buatSampel("20", "Ganja", 12.5, 60, 48, 800000000L));
+        pengelola.hapusPutusan("20");
+        pengelola.undo();
+
+        assertTrue(daftarGenerik.validateInvariant()
+                        && stackGenerik.validateInvariant()
+                        && pengelola.validateInvariants()
+                        && terhapus.equals("Item-B")
+                        && puncak.equals("Log-2"),
+                "Skenario 8: Kontrak generik StrukturData<T> & validateInvariant() terverifikasi");
+    }
+
+    private static void test9_FilterMultiKriteriaLanjutan() {
+        PengelolaPutusan pengelola = new PengelolaPutusan();
+        pengelola.tambahPutusan(buatSampel("31", "Sabu", 0.5, 60, 60, 1000000000L));
+        pengelola.tambahPutusan(buatSampel("32", "Sabu", 5.2, 120, 96, 1500000000L));
+        pengelola.tambahPutusan(buatSampel("33", "Ganja", 150.0, 108, 90, 1000000000L));
+
+        ArrayDinamis<Putusan> hasil = pengelola.filterMultiKriteria("Sabu", 70, 120, 2.0);
+        assertTrue(hasil.size() == 1 && hasil.get(0).getCaseId().equals("32") && hasil.validateInvariant(),
+                "Skenario 9: Filter multi-kriteria (jenis, vonis & berat) mengembalikan hasil akurat");
     }
 }

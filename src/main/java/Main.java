@@ -23,10 +23,11 @@ public class Main {
             System.out.println("2. Cari Putusan berdasarkan Case ID");
             System.out.println("3. Filter Rentang Vonis (Bulan)");
             System.out.println("4. Filter Jenis Narkotika");
-            System.out.println("5. Tambah Putusan Baru");
-            System.out.println("6. Ubah Lama Vonis Putusan");
-            System.out.println("7. Hapus Putusan");
-            System.out.println("8. Undo Perubahan Terakhir (Stack Audit)");
+            System.out.println("5. Filter Multi-Kriteria (Jenis, Vonis & Berat Bukti)");
+            System.out.println("6. Tambah Putusan Baru");
+            System.out.println("7. Ubah Lama Vonis Putusan");
+            System.out.println("8. Hapus Putusan");
+            System.out.println("9. Undo Perubahan Terakhir (Stack Audit)");
             System.out.println("0. Keluar");
             System.out.print("Pilih menu: ");
 
@@ -67,6 +68,22 @@ public class Main {
                     break;
 
                 case "5":
+                    try {
+                        System.out.print("Jenis narkotika (kosongkan jika semua): ");
+                        String filterJenis = scanner.nextLine().trim();
+                        System.out.print("Vonis minimum (bulan): ");
+                        int minVonis = Integer.parseInt(scanner.nextLine().trim());
+                        System.out.print("Vonis maksimum (bulan): ");
+                        int maxVonis = Integer.parseInt(scanner.nextLine().trim());
+                        System.out.print("Berat minimal barang bukti (gram): ");
+                        double minBerat = Double.parseDouble(scanner.nextLine().trim());
+                        tampilkanDaftar(pengelola.filterMultiKriteria(filterJenis, minVonis, maxVonis, minBerat));
+                    } catch (NumberFormatException e) {
+                        System.out.println("Input angka vonis atau berat tidak valid.");
+                    }
+                    break;
+
+                case "6":
                     try {
                         System.out.print("Case ID: ");
                         String id = scanner.nextLine().trim();
@@ -109,7 +126,7 @@ public class Main {
                     }
                     break;
 
-                case "6":
+                case "7":
                     try {
                         System.out.print("Case ID yang akan diubah vonisnya: ");
                         String idUbah = scanner.nextLine().trim();
@@ -125,7 +142,7 @@ public class Main {
                     }
                     break;
 
-                case "7":
+                case "8":
                     System.out.print("Case ID yang akan dihapus: ");
                     String idHapus = scanner.nextLine().trim();
                     if (pengelola.hapusPutusan(idHapus)) {
@@ -135,7 +152,7 @@ public class Main {
                     }
                     break;
 
-                case "8":
+                case "9":
                     StackAudit.EntriAudit terakhir = pengelola.lihatAuditTerakhir();
                     if (terakhir == null) {
                         System.out.println("Tidak ada aksi yang dapat di-undo.");
@@ -157,13 +174,13 @@ public class Main {
         scanner.close();
     }
 
-    private static void tampilkanDaftar(ArrayDinamis daftar) {
-        if (daftar.kosong()) {
+    private static void tampilkanDaftar(ArrayDinamis<Putusan> daftar) {
+        if (daftar.isEmpty()) {
             System.out.println("(Tidak ada data putusan yang cocok)");
             return;
         }
-        for (int i = 0; i < daftar.ukuran(); i++) {
-            System.out.println((i + 1) + ". " + daftar.ambil(i));
+        for (int i = 0; i < daftar.size(); i++) {
+            System.out.println((i + 1) + ". " + daftar.get(i));
         }
     }
 

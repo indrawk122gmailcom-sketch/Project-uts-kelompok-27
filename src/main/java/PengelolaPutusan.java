@@ -3,12 +3,12 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class PengelolaPutusan {
-    private final ArrayDinamis daftarPutusan;
-    private final StackAudit riwayatAudit;
+    private final ArrayDinamis<Putusan> daftarPutusan;
+    private final StackAudit<StackAudit.EntriAudit> riwayatAudit;
 
     public PengelolaPutusan() {
-        this.daftarPutusan = new ArrayDinamis(16);
-        this.riwayatAudit = new StackAudit();
+        this.daftarPutusan = new ArrayDinamis<>(16);
+        this.riwayatAudit = new StackAudit<>();
     }
 
     public int muatDariCsv(String pathFile) throws IOException {
@@ -49,14 +49,27 @@ public class PengelolaPutusan {
         return berhasilDimuat;
     }
 
+    private int cariIndeksByCaseId(String caseId) {
+        if (caseId == null) {
+            return -1;
+        }
+        String target = caseId.trim();
+        for (int i = 0; i < daftarPutusan.size(); i++) {
+            if (daftarPutusan.get(i).getCaseId().equalsIgnoreCase(target)) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
     private boolean tambahPutusanTanpaAudit(Putusan p) {
         if (!validasiPutusan(p)) {
             return false;
         }
-        if (daftarPutusan.cariIndeksByCaseId(p.getCaseId()) != -1) {
+        if (cariIndeksByCaseId(p.getCaseId()) != -1) {
             return false;
         }
-        daftarPutusan.tambah(p);
+        daftarPutusan.add(p);
         return true;
     }
 
@@ -64,11 +77,11 @@ public class PengelolaPutusan {
         if (!validasiPutusan(p)) {
             return false;
         }
-        if (daftarPutusan.cariIndeksByCaseId(p.getCaseId()) != -1) {
+        if (cariIndeksByCaseId(p.getCaseId()) != -1) {
             return false;
         }
-        int indeksBaru = daftarPutusan.ukuran();
-        daftarPutusan.tambah(p);
+        int indeksBaru = daftarPutusan.size();
+        daftarPutusan.add(p);
         riwayatAudit.push(new StackAudit.EntriAudit(
                 "TAMBAH", p.salin(), indeksBaru, "Menambahkan putusan caseId=" + p.getCaseId()
         ));
@@ -88,31 +101,48 @@ public class PengelolaPutusan {
     }
 
     public Putusan cariByCaseId(String caseId) {
-        int idx = daftarPutusan.cariIndeksByCaseId(caseId);
-        return (idx == -1) ? null : daftarPutusan.ambil(idx);
+        int idx = cariIndeksByCaseId(caseId);
+        return (idx == -1) ? null : daftarPutusan.get(idx);
     }
 
-    public ArrayDinamis filterRentangVonis(int minBulan, int maxBulan) {
-        ArrayDinamis hasil = new ArrayDinamis(10);
-        for (int i = 0; i < daftarPutusan.ukuran(); i++) {
-            Putusan p = daftarPutusan.ambil(i);
+    public ArrayDinamis<Putusan> filterRentangVonis(int minBulan, int maxBulan) {
+        ArrayDinamis<Putusan> hasil = new ArrayDinamis<>(10);
+        for (int i = 0; i < daftarPutusan.size(); i++) {
+            Putusan p = daftarPutusan.get(i);
             if (p.getVonisBulan() >= minBulan && p.getVonisBulan() <= maxBulan) {
-                hasil.tambah(p);
+                hasil.add(p);
             }
         }
         return hasil;
     }
 
-    public ArrayDinamis filterJenisNarkotika(String kataKunci) {
-        ArrayDinamis hasil = new ArrayDinamis(10);
+    public ArrayDinamis<Putusan> filterJenisNarkotika(String kataKunci) {
+        ArrayDinamis<Putusan> hasil = new ArrayDinamis<>(10);
         if (kataKunci == null || kataKunci.trim().isEmpty()) {
             return hasil;
         }
         String kunci = kataKunci.trim().toLowerCase();
-        for (int i = 0; i < daftarPutusan.ukuran(); i++) {
-            Putusan p = daftarPutusan.ambil(i);
+        for (int i = 0; i < daftarPutusan.size(); i++) {
+            Putusan p = daftarPutusan.get(i);
             if (p.getJenisNarkotika().toLowerCase().contains(kunci)) {
-                hasil.tambah(p);
+                hasil.add(p);
+            }
+        }
+        return hasil;
+    }
+
+    public ArrayDinamis<Putusan> filterMultiKriteria(String jenisNarkotika, int minVonisBulan, int maxVonisBulan, double minBeratGram) {
+        ArrayDinamis<Putusan> hasil = new ArrayDinamis<>(10);
+        String kunciJenis = (jenisNarkotika == null) ? "" : jenisNarkotika.trim().toLowerCase();
+
+        for (int i = 0; i < daftarPutusan.size(); i++) {
+            Putusan p = daftarPutusan.get(i);
+            boolean cocokJenis = kunciJenis.isEmpty() || p.getJenisNarkotika().toLowerCase().contains(kunciJenis);
+            boolean cocokVonis = p.getVonisBulan() >= minVonisBulan && p.getVonisBulan() <= maxVonisBulan;
+            boolean cocokBerat = p.getBeratBarangBuktiGram() >= minBeratGram;
+
+            if (cocokJenis && cocokVonis && cocokBerat) {
+                hasil.add(p);
             }
         }
         return hasil;
@@ -122,11 +152,11 @@ public class PengelolaPutusan {
         if (vonisBaru < 0) {
             return false;
         }
-        int idx = daftarPutusan.cariIndeksByCaseId(caseId);
+        int idx = cariIndeksByCaseId(caseId);
         if (idx == -1) {
             return false;
         }
-        Putusan target = daftarPutusan.ambil(idx);
+        Putusan target = daftarPutusan.get(idx);
         Putusan sebelum = target.salin();
         target.setVonisBulan(vonisBaru);
 
@@ -138,11 +168,11 @@ public class PengelolaPutusan {
     }
 
     public boolean hapusPutusan(String caseId) {
-        int idx = daftarPutusan.cariIndeksByCaseId(caseId);
+        int idx = cariIndeksByCaseId(caseId);
         if (idx == -1) {
             return false;
         }
-        Putusan terhapus = daftarPutusan.hapusPada(idx);
+        Putusan terhapus = daftarPutusan.remove(idx);
         riwayatAudit.push(new StackAudit.EntriAudit(
                 "HAPUS", terhapus.salin(), idx,
                 "Menghapus putusan caseId=" + caseId + " (" + terhapus.getNomorPerkara() + ")"
@@ -151,28 +181,28 @@ public class PengelolaPutusan {
     }
 
     public boolean undo() {
-        if (riwayatAudit.kosong()) {
+        if (riwayatAudit.isEmpty()) {
             return false;
         }
         StackAudit.EntriAudit aksiTerakhir = riwayatAudit.pop();
 
         switch (aksiTerakhir.jenisAksi) {
             case "TAMBAH":
-                int idxHapus = daftarPutusan.cariIndeksByCaseId(aksiTerakhir.snapshotSebelum.getCaseId());
+                int idxHapus = cariIndeksByCaseId(aksiTerakhir.snapshotSebelum.getCaseId());
                 if (idxHapus != -1) {
-                    daftarPutusan.hapusPada(idxHapus);
+                    daftarPutusan.remove(idxHapus);
                 }
                 return true;
 
             case "UBAH_VONIS":
-                int idxUbah = daftarPutusan.cariIndeksByCaseId(aksiTerakhir.snapshotSebelum.getCaseId());
+                int idxUbah = cariIndeksByCaseId(aksiTerakhir.snapshotSebelum.getCaseId());
                 if (idxUbah != -1) {
-                    daftarPutusan.ambil(idxUbah).setVonisBulan(aksiTerakhir.snapshotSebelum.getVonisBulan());
+                    daftarPutusan.get(idxUbah).setVonisBulan(aksiTerakhir.snapshotSebelum.getVonisBulan());
                 }
                 return true;
 
             case "HAPUS":
-                int posisi = Math.min(aksiTerakhir.indeksAsal, daftarPutusan.ukuran());
+                int posisi = Math.min(aksiTerakhir.indeksAsal, daftarPutusan.size());
                 daftarPutusan.sisipkan(posisi, aksiTerakhir.snapshotSebelum);
                 return true;
 
@@ -181,19 +211,23 @@ public class PengelolaPutusan {
         }
     }
 
+    public boolean validateInvariants() {
+        return daftarPutusan.validateInvariant() && riwayatAudit.validateInvariant();
+    }
+
     public int jumlahData() {
-        return daftarPutusan.ukuran();
+        return daftarPutusan.size();
     }
 
     public int jumlahRiwayatAudit() {
-        return riwayatAudit.ukuran();
+        return riwayatAudit.size();
     }
 
     public StackAudit.EntriAudit lihatAuditTerakhir() {
         return riwayatAudit.peek();
     }
 
-    public ArrayDinamis getSemuaPutusan() {
+    public ArrayDinamis<Putusan> getSemuaPutusan() {
         return daftarPutusan;
     }
 }
