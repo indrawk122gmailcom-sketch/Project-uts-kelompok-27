@@ -1,0 +1,311 @@
+case_id,field_name,value,source_file,source_page,extractor,reviewer,status
+P026,nomorPerkara,1534/Pid.Sus/2022/PN.Tng,putusan_narkoba_26.pdf,1,Sultan,Indra,verified
+P026,pengadilan,Pengadilan Negeri Tangerang,putusan_narkoba_26.pdf,1,Sultan,Indra,verified
+P026,tanggalPutusan,2022-09-29,putusan_narkoba_26.pdf,25,Sultan,Indra,verified
+P026,terdakwaKode,RIZKY NIRWANSYAH Alias CODET Bin FADIL HALIMI,putusan_narkoba_26.pdf,1,Sultan,Indra,verified
+P026,jenisNarkotika,Metamfetamina (Sabu),putusan_narkoba_26.pdf,4;14;22,Sultan,Indra,verified
+P026,beratBarangBuktiGram,0.0944,putusan_narkoba_26.pdf,2;4;14;24,Sultan,Indra,verified
+P026,pasalDakwaan,Kesatu: Pasal 114 ayat (1) UU RI No. 35 Tahun 2009 tentang Narkotika; Atau Kedua: Pasal 112 ayat (1) UU RI No. 35 Tahun 2009 tentang Narkotika,putusan_narkoba_26.pdf,3-5;17-18,Sultan,Indra,verified
+P026,pasalTerbukti,Pasal 114 ayat (1) UU RI No. 35 Tahun 2009 tentang Narkotika,putusan_narkoba_26.pdf,23-24,Sultan,Indra,verified
+P026,tuntutanBulan,60,putusan_narkoba_26.pdf,2,Sultan,Indra,verified
+P026,vonisBulan,60,putusan_narkoba_26.pdf,24,Sultan,Indra,verified
+P026,dendaRupiah,1000000000,putusan_narkoba_26.pdf,24,Sultan,Indra,verified
+P026,barangBukti,"1 bungkus plastik bening/klip berisi kristal warna putih Narkotika jenis Metamfetamina (shabu) berat netto awal 0,0944 gram / netto sisa 0,0844 gram (brutto 0,11 gram; kode BB 1061/2022/OF; No. Lab 2538/NNF/2022 & 2539/NNF/2022) dirampas untuk dimusnahkan",putusan_narkoba_26.pdf,2;4;14;24,Sultan,Indra,verified
+P027,nomorPerkara,544/Pid.Sus/2025/PN.Tng,putusan_narkoba_27.pdf,1,Sultan,Indra,verified
+P027,pengadilan,Pengadilan Negeri Tangerang,putusan_narkoba_27.pdf,1,Sultan,Indra,verified
+P027,tanggalPutusan,2025-06-24,putusan_narkoba_27.pdf,34,Sultan,Indra,verified
+P027,terdakwaKode,FANI MARDANI ALIAS GEPENG BIN MUFROIL,putusan_narkoba_27.pdf,1,Sultan,Indra,verified
+P027,jenisNarkotika,Tembakau Sintetis (MDMB-4en-PINACA) dan Ganja,putusan_narkoba_27.pdf,2,Sultan,Indra,verified
+P027,beratBarangBuktiGram,56.54,putusan_narkoba_27.pdf,2,Sultan,Indra,verified
+P027,pasalDakwaan,Kesatu Primair: Pasal 114 ayat (2) jo Pasal 132 ayat (1); Kesatu Subsidiair: Pasal 112 ayat (2); Kedua: Pasal 111 ayat (1) UU No. 35 Tahun 2009,putusan_narkoba_27.pdf,19,Sultan,Indra,verified
+P027,pasalTerbukti,Pasal 112 ayat (2) dan Pasal 111 ayat (1) UU RI No. 35 Tahun 2009,putusan_narkoba_27.pdf,33,Sultan,Indra,verified
+P027,tuntutanBulan,108,putusan_narkoba_27.pdf,2,Sultan,Indra,verified
+P027,vonisBulan,96,putusan_narkoba_27.pdf,33,Sultan,Indra,verified
+P027,dendaRupiah,4000000000,putusan_narkoba_27.pdf,34,Sultan,Indra,verified
+P027,barangBukti,"1 plastik klip tembakau sintetis netto 27,3782 gram, 5 plastik klip tembakau sintetis netto 27,3782 gram, 1 kertas daun ganja netto 1,7836 gram, 1 HP Samsung",putusan_narkoba_27.pdf,34,Sultan,Indra,verified
+P028,nomorPerkara,1048/Pid.Sus/2024/PN Tng,putusan_narkoba_28.pdf,1,Sultan,Indra,verified
+P028,pengadilan,Pengadilan Negeri Tangerang,putusan_narkoba_28.pdf,1,Sultan,Indra,verified
+P028,tanggalPutusan,2024-08-29,putusan_narkoba_28.pdf,30,Sultan,Indra,verified
+P028,terdakwaKode,MUHAMAD AFFANDI Als BENO Bin M. HUSNI TABRANI (Alm),putusan_narkoba_28.pdf,1,Sultan,Indra,verified
+P028,jenisNarkotika,Metamfetamina (Sabu),putusan_narkoba_28.pdf,6,Sultan,Indra,verified
+P028,beratBarangBuktiGram,40.7,putusan_narkoba_28.pdf,3,Sultan,Indra,verified
+P028,pasalDakwaan,Primair: Pasal 114 ayat (2); Subsidiair: Pasal 112 ayat (2) UU No. 35 Tahun 2009,putusan_narkoba_28.pdf,7,Sultan,Indra,verified
+P028,pasalTerbukti,Pasal 114 ayat (2) UU No. 35 Tahun 2009,putusan_narkoba_28.pdf,29,Sultan,Indra,verified
+P028,tuntutanBulan,156,putusan_narkoba_28.pdf,2,Sultan,Indra,verified
+P028,vonisBulan,150,putusan_narkoba_28.pdf,29,Sultan,Indra,verified
+P028,dendaRupiah,1000000000,putusan_narkoba_28.pdf,29,Sultan,Indra,verified
+P028,barangBukti,"1 paket plastik bening sabu brutto 20,9 gram (kode 1), 1 paket plastik klip bening sabu brutto 19,8 gram (kode 2), 1 HP Vivo biru",putusan_narkoba_28.pdf,29,Sultan,Indra,verified
+P029,nomorPerkara,1157/Pid.Sus/2026/PN.Tng,putusan_narkoba_29.pdf,1,Sultan,Indra,verified
+P029,pengadilan,Pengadilan Negeri Tangerang Kelas IA Khusus,putusan_narkoba_29.pdf,1,Sultan,Indra,verified
+P029,tanggalPutusan,2026-09-17,putusan_narkoba_29.pdf,35,Sultan,Indra,verified
+P029,terdakwaKode,Terdakwa I: MUHAMAD ZIBRIL als UZIB Bin BADRU; Terdakwa II: HERLINA als SABILA Binti ROPI,putusan_narkoba_29.pdf,1,Sultan,Indra,verified
+P029,jenisNarkotika,Metamfetamina (Sabu),putusan_narkoba_29.pdf,8,Sultan,Indra,verified
+P029,beratBarangBuktiGram,3.14,putusan_narkoba_29.pdf,3,Sultan,Indra,verified
+P029,pasalDakwaan,Alternatif Pertama: Pasal 114 ayat (1) UU No. 35 Tahun 2009 jo UU No. 1 Tahun 2026 jo Pasal 132 ayat (1); Kedua: Pasal 609 ayat (1) huruf a UU No. 1 Tahun 2023,putusan_narkoba_29.pdf,24,Sultan,Indra,verified
+P029,pasalTerbukti,Pasal 114 ayat (1) jo Pasal 132 ayat (1) UU RI No. 35 Tahun 2009 jo UU No. 1 Tahun 2026,putusan_narkoba_29.pdf,34,Sultan,Indra,verified
+P029,tuntutanBulan,120,putusan_narkoba_29.pdf,3,Sultan,Indra,verified
+P029,vonisBulan,72,putusan_narkoba_29.pdf,34,Sultan,Indra,verified
+P029,dendaRupiah,900000000,putusan_narkoba_29.pdf,34,Sultan,Indra,verified
+P029,barangBukti,"14 bungkus plastik klip kristal putih Sabu brutto 3,14 gram (netto 1,6509 gram), timbangan digital, uang tunai Rp200.000, 1 HP Oppo hitam",putusan_narkoba_29.pdf,34,Sultan,Indra,verified
+P030,nomorPerkara,1163/Pid.Sus/2024/PN.Tng,putusan_narkoba_30.pdf,1,Sultan,Indra,verified
+P030,pengadilan,Pengadilan Negeri Tangerang Kelas IA Khusus,putusan_narkoba_30.pdf,16,Sultan,Indra,verified
+P030,tanggalPutusan,2024-10-28,putusan_narkoba_30.pdf,16,Sultan,Indra,verified
+P030,terdakwaKode,NEDI Bin (Alm) H. SAMIN,putusan_narkoba_30.pdf,1,Sultan,Indra,verified
+P030,jenisNarkotika,Metamfetamina (Sabu),putusan_narkoba_30.pdf,5,Sultan,Indra,verified
+P030,beratBarangBuktiGram,4.59,putusan_narkoba_30.pdf,2,Sultan,Indra,verified
+P030,pasalDakwaan,Alternatif Pertama: Pasal 114 ayat (1); Kedua: Pasal 112 ayat (1) UU No. 35 Tahun 2009,putusan_narkoba_30.pdf,12,Sultan,Indra,verified
+P030,pasalTerbukti,Pasal 112 ayat (1) UU No. 35 Tahun 2009,putusan_narkoba_30.pdf,16,Sultan,Indra,verified
+P030,tuntutanBulan,132,putusan_narkoba_30.pdf,2,Sultan,Indra,verified
+P030,vonisBulan,120,putusan_narkoba_30.pdf,16,Sultan,Indra,verified
+P030,dendaRupiah,1000000000,putusan_narkoba_30.pdf,16,Sultan,Indra,verified
+P030,barangBukti,"1 klip plastik bening berisi serbuk kristal Sabu brutto 4,59 gram (netto 4,1601 gram), 1 alat hisap bong botol teh pucuk, 1 korek api Tokai hijau",putusan_narkoba_30.pdf,16,Sultan,Indra,verified
+P031,nomorPerkara,1167/Pid.Sus/2025/PN.Tng,putusan_narkoba_31.pdf,1,Sultan,Indra,verified
+P031,pengadilan,Pengadilan Negeri Tangerang,putusan_narkoba_31.pdf,1,Sultan,Indra,verified
+P031,tanggalPutusan,2025-11-25,putusan_narkoba_31.pdf,58,Sultan,Indra,verified
+P031,terdakwaKode,Terdakwa-31,putusan_narkoba_31.pdf,1,Sultan,Indra,verified
+P031,jenisNarkotika,Metamfetamina (Sabu); Mefedron (Ekstasi),putusan_narkoba_31.pdf,36,Sultan,Indra,verified
+P031,beratBarangBuktiGram,34200,putusan_narkoba_31.pdf,53,Sultan,Indra,verified
+P031,pasalDakwaan,Primair: Pasal 114 ayat (2) jo Pasal 132 ayat (1); Subsidiair: Pasal 112 ayat (2) jo Pasal 132 ayat (1) UU No. 35 Tahun 2009,putusan_narkoba_31.pdf,14,Sultan,Indra,verified
+P031,pasalTerbukti,Pasal 114 ayat (2) jo Pasal 132 ayat (1) UU RI No. 35 Tahun 2009,putusan_narkoba_31.pdf,53,Sultan,Indra,verified
+P031,tuntutanBulan,0,putusan_narkoba_31.pdf,2,Sultan,Indra,verified
+P031,vonisBulan,0,putusan_narkoba_31.pdf,53,Sultan,Indra,verified
+P031,dendaRupiah,0,putusan_narkoba_31.pdf,53,Sultan,Indra,verified
+P031,barangBukti,"27 plastik cream kristal putih Sabu netto 27.000 gram (27 x 1.000 gram) dan 6 plastik tablet Ekstasi/Mefedron 18.000 butir netto 7.200 gram dalam 2 koper (dimusnahkan; sampel lab No. 1563/2025/NF s.d. 1595/2025/NF), 4 unit HP (iPhone 14 Pro, Realme 5i, Samsung Galaxy M12, Samsung A06), 1 tiket bus ALS",putusan_narkoba_31.pdf,53,Sultan,Indra,verified
+P032,nomorPerkara,1404/Pid.Sus/2026/PN Tng,putusan_narkoba_32.pdf,1,Sultan,Indra,verified
+P032,pengadilan,Pengadilan Negeri Tangerang,putusan_narkoba_32.pdf,1,Sultan,Indra,verified
+P032,tanggalPutusan,2026-09-29,putusan_narkoba_32.pdf,18,Sultan,Indra,verified
+P032,terdakwaKode,Terdakwa-32,putusan_narkoba_32.pdf,1,Sultan,Indra,verified
+P032,jenisNarkotika,Ganja,putusan_narkoba_32.pdf,3,Sultan,Indra,verified
+P032,beratBarangBuktiGram,1.5356,putusan_narkoba_32.pdf,3,Sultan,Indra,verified
+P032,pasalDakwaan,Pertama: Pasal 114 ayat (1) UU No. 35 Tahun 2009 jo Lampiran II UU No. 1 Tahun 2026; Kedua: Pasal 111 ayat (1) UU No. 35 Tahun 2009 jo Lampiran II UU No. 1 Tahun 2026,putusan_narkoba_32.pdf,7,Sultan,Indra,verified
+P032,pasalTerbukti,Pasal 114 ayat (1) UU RI No. 35 Tahun 2009 jo Lampiran II UU RI No. 1 Tahun 2026,putusan_narkoba_32.pdf,16,Sultan,Indra,verified
+P032,tuntutanBulan,44,putusan_narkoba_32.pdf,2,Sultan,Indra,verified
+P032,vonisBulan,36,putusan_narkoba_32.pdf,17,Sultan,Indra,verified
+P032,dendaRupiah,1000000000,putusan_narkoba_32.pdf,17,Sultan,Indra,verified
+P032,barangBukti,"1 plastik klip bening berisi 3 paket kertas coklat Ganja netto 1,5356 gram (brutto 6,25 gram; sisa lab 1,218 gram) dan 3 lembar kertas papir rokok putih, 1 unit HP Vivo Y12S biru",putusan_narkoba_32.pdf,17,Sultan,Indra,verified
+P033,nomorPerkara,1418/Pid.Sus/2025/PN Tng,putusan_narkoba_33.pdf,1,Sultan,Indra,verified
+P033,pengadilan,Pengadilan Negeri Tangerang,putusan_narkoba_33.pdf,1,Sultan,Indra,verified
+P033,tanggalPutusan,2025-09-29,putusan_narkoba_33.pdf,24,Sultan,Indra,verified
+P033,terdakwaKode,Terdakwa-33,putusan_narkoba_33.pdf,1,Sultan,Indra,verified
+P033,jenisNarkotika,Metamfetamina (Sabu),putusan_narkoba_33.pdf,5,Sultan,Indra,verified
+P033,beratBarangBuktiGram,0.2802,putusan_narkoba_33.pdf,5,Sultan,Indra,verified
+P033,pasalDakwaan,Primair: Pasal 114 ayat (1) jo Pasal 132 ayat (1); Subsidiair: Pasal 112 ayat (1) jo Pasal 132 ayat (1) UU No. 35 Tahun 2009,putusan_narkoba_33.pdf,5,Sultan,Indra,verified
+P033,pasalTerbukti,Pasal 114 ayat (1) jo Pasal 132 ayat (1) UU RI No. 35 Tahun 2009,putusan_narkoba_33.pdf,23,Sultan,Indra,verified
+P033,tuntutanBulan,72,putusan_narkoba_33.pdf,2,Sultan,Indra,verified
+P033,vonisBulan,72,putusan_narkoba_33.pdf,23,Sultan,Indra,verified
+P033,dendaRupiah,4000000000,putusan_narkoba_33.pdf,23,Sultan,Indra,verified
+P033,barangBukti,"6 bungkus plastik klip bening berisi kristal Sabu kode A.1 s.d. A.6 berat netto seluruhnya 0,2802 gram (brutto total 1,23 gram), 1 tas hitam bertuliskan NIKE, 1 unit HP Oppo CPH2015 merah",putusan_narkoba_33.pdf,24,Sultan,Indra,verified
+P034,nomorPerkara,1477/Pid.Sus/2022/PN Tng,putusan_narkoba_34.pdf,1;22,Sultan,Indra,verified
+P034,pengadilan,Pengadilan Negeri Tangerang,putusan_narkoba_34.pdf,1;22,Sultan,Indra,verified
+P034,tanggalPutusan,2022-11-23,putusan_narkoba_34.pdf,22,Sultan,Indra,verified
+P034,terdakwaKode,Terdakwa-34,putusan_narkoba_34.pdf,1,Sultan,Indra,verified
+P034,jenisNarkotika,Metamfetamina (Sabu); 1-(p-fluorofenil) piperazin (Ekstasi),putusan_narkoba_34.pdf,5;8;15,Sultan,Indra,verified
+P034,beratBarangBuktiGram,308.92,putusan_narkoba_34.pdf,3;5;15;16;19;22,Sultan,Indra,verified
+P034,pasalDakwaan,"Kesatu: Pasal 114 ayat (2) UU RI No. 35 Tahun 2009 tentang Narkotika; Atau Kedua: Pasal 112 ayat (2) UU RI No. 35 Tahun 2009 tentang Narkotika",putusan_narkoba_34.pdf,3-8,Sultan,Indra,verified
+P034,pasalTerbukti,Pasal 114 ayat (2) UU RI No. 35 Tahun 2009 tentang Narkotika,putusan_narkoba_34.pdf,17;20;21,Sultan,Indra,verified
+P034,tuntutanBulan,108,putusan_narkoba_34.pdf,2,Sultan,Indra,verified
+P034,vonisBulan,84,putusan_narkoba_34.pdf,21,Sultan,Indra,verified
+P034,dendaRupiah,2700000000,putusan_narkoba_34.pdf,21,Sultan,Indra,verified
+P034,barangBukti,"4 bungkus plastik bening berisi total 351 butir pil ekstasi warna merah muda (masing-masing 79 butir, 100 butir, 99 butir, dan 73 butir; sampel lab 4 bungkus kode 1B, 2B, 3B, 4B masing-masing 5 butir positif 1-(p-fluorofenil) piperazin dengan berat akhir netto 4,2658 gram); 3 bungkus plastik bening berisi narkotika jenis sabu dengan berat brutto seluruhnya 308,92 gram (masing-masing 102,92 gram, 103,00 gram, dan 103,00 gram; sampel lab 3 bungkus kode A1, A2, A3 positif Metamfetamine dengan berat netto awal 2,3853 gram dan berat akhir netto 2,2821 gram; No. Lab PL3DF/VI/2022/Pusat Laboratorium Narkotika tanggal 02 Juni 2022); 1 buah korek api yang sudah dimodifikasi warna merah; 1 buah pipa kaca; 1 buah timbangan digital warna hitam; 1 buah handphone merk Samsung warna hitam (dirampas untuk dimusnahkan)",putusan_narkoba_34.pdf,2-3;5;14-15;21-22,Sultan,Indra,verified
+P035,nomorPerkara,1570/Pid.Sus/2024/PN Tng,putusan_narkoba_35.pdf,1,Sultan,Indra,verified
+P035,pengadilan,Pengadilan Negeri Tangerang,putusan_narkoba_35.pdf,1,Sultan,Indra,verified
+P035,tanggalPutusan,2024-11-20,putusan_narkoba_35.pdf,30,Sultan,Indra,verified
+P035,terdakwaKode,Terdakwa-35A; Terdakwa-35B,putusan_narkoba_35.pdf,1,Sultan,Indra,verified
+P035,jenisNarkotika,Metamfetamina (Sabu),putusan_narkoba_35.pdf,6,Sultan,Indra,verified
+P035,beratBarangBuktiGram,1.2939,putusan_narkoba_35.pdf,7,Sultan,Indra,verified
+P035,pasalDakwaan,Primair: Pasal 114 ayat (1) jo Pasal 132 ayat (1); Subsidiair: Pasal 112 ayat (1) jo Pasal 132 ayat (1) UU No. 35 Tahun 2009,putusan_narkoba_35.pdf,9,Sultan,Indra,verified
+P035,pasalTerbukti,Pasal 114 ayat (1) jo Pasal 132 ayat (1) UU RI No. 35 Tahun 2009,putusan_narkoba_35.pdf,29,Sultan,Indra,verified
+P035,tuntutanBulan,84,putusan_narkoba_35.pdf,3,Sultan,Indra,verified
+P035,vonisBulan,78,putusan_narkoba_35.pdf,30,Sultan,Indra,verified
+P035,dendaRupiah,1000000000,putusan_narkoba_35.pdf,30,Sultan,Indra,verified
+P035,barangBukti,"3 bungkus plastik klip berisi total 16 plastik klip kristal putih Sabu netto 1,2939 gram (brutto 2,97 gram; No. BB 3121/2024/NF, 3122/2024/NF, 3123/2024/NF), 1 unit HP Infinix hitam, 1 unit HP Oppo biru",putusan_narkoba_35.pdf,30,Sultan,Indra,verified
+P036,nomorPerkara,1584/Pid.Sus/2024/PN Tng,putusan_narkoba_36_2.pdf,1,Sultan,Indra,verified
+P036,pengadilan,Pengadilan Negeri Tangerang,putusan_narkoba_36_2.pdf,1,Sultan,Indra,verified
+P036,tanggalPutusan,2024-12-03,putusan_narkoba_36_2.pdf,16,Sultan,Indra,verified
+P036,terdakwaKode,TDW-036,putusan_narkoba_36_2.pdf,1,Sultan,Indra,verified
+P036,jenisNarkotika,Sabu (Metamfetamina),putusan_narkoba_36_2.pdf,"5,14,16",Sultan,Indra,verified
+P036,beratBarangBuktiGram,3.3654,putusan_narkoba_36_2.pdf,16,Sultan,Indra,verified
+P036,pasalDakwaan,Alternatif Pertama Pasal 114 ayat (1) atau Kedua Pasal 112 ayat (1) UU RI No. 35 Tahun 2009 tentang Narkotika,putusan_narkoba_36_2.pdf,"5,7,11",Sultan,Indra,verified
+P036,pasalTerbukti,Pasal 114 ayat (1) UU RI No. 35 Tahun 2009 tentang Narkotika,putusan_narkoba_36_2.pdf,"14,16",Sultan,Indra,verified
+P036,tuntutanBulan,84,putusan_narkoba_36_2.pdf,2,Sultan,Indra,verified
+P036,vonisBulan,78,putusan_narkoba_36_2.pdf,16,Sultan,Indra,verified
+P036,dendaRupiah,4000000000,putusan_narkoba_36_2.pdf,16,Sultan,Indra,verified
+P036,barangBukti,"1 plastik klip bening berisi sabu berat netto 3,3654 gram; 1 dompet coklat merah motif bunga; 1 alat hisap/bong; 1 cangklong; 1 HP Realme hitam; 2 korek api gas (dirampas untuk dimusnahkan)",putusan_narkoba_36_2.pdf,16,Sultan,Indra,verified
+P037,nomorPerkara,1606/Pid.Sus/2024/PN Tng,putusan_narkoba_37_2.pdf,1,Sultan,Indra,verified
+P037,pengadilan,Pengadilan Negeri Tangerang,putusan_narkoba_37_2.pdf,1,Sultan,Indra,verified
+P037,tanggalPutusan,2024-12-18,putusan_narkoba_37_2.pdf,15,Sultan,Indra,verified
+P037,terdakwaKode,TDW-037,putusan_narkoba_37_2.pdf,1,Sultan,Indra,verified
+P037,jenisNarkotika,Tembakau sintetis (MDMB-4en PINACA) dan Sabu (Metamfetamina),putusan_narkoba_37_2.pdf,"5,10,15",Sultan,Indra,verified
+P037,beratBarangBuktiGram,4.6947,putusan_narkoba_37_2.pdf,15,Sultan,Indra,verified
+P037,pasalDakwaan,Primair Pasal 114 ayat (1); Subsidair Pasal 112 ayat (1) UU RI No. 35 Tahun 2009 tentang Narkotika,putusan_narkoba_37_2.pdf,"5,7,11",Sultan,Indra,verified
+P037,pasalTerbukti,Pasal 114 ayat (1) UU RI No. 35 Tahun 2009 tentang Narkotika,putusan_narkoba_37_2.pdf,"13,14",Sultan,Indra,verified
+P037,tuntutanBulan,84,putusan_narkoba_37_2.pdf,2,Sultan,Indra,verified
+P037,vonisBulan,66,putusan_narkoba_37_2.pdf,14,Sultan,Indra,verified
+P037,dendaRupiah,1000000000,putusan_narkoba_37_2.pdf,14,Sultan,Indra,verified
+P037,barangBukti,"1 bungkus plastik klip daun kering (MDMB-4en PINACA) netto 4,0441 gram dan 3 bungkus plastik klip kristal putih (Metamfetamina) netto 0,3350 gram, 0,2089 gram, dan 0,1067 gram (dirampas untuk dimusnahkan)",putusan_narkoba_37_2.pdf,15,Sultan,Indra,verified
+P038,nomorPerkara,1617/Pid.Sus/2024/PN Tng,putusan_narkoba_38_2.pdf,1,Sultan,Indra,verified
+P038,pengadilan,Pengadilan Negeri Tangerang,putusan_narkoba_38_2.pdf,1,Sultan,Indra,verified
+P038,tanggalPutusan,2024-12-23,putusan_narkoba_38_2.pdf,21,Sultan,Indra,verified
+P038,terdakwaKode,TDW-038,putusan_narkoba_38_2.pdf,1,Sultan,Indra,verified
+P038,jenisNarkotika,Tembakau sintetis (MDMB-4en PINACA),putusan_narkoba_38_2.pdf,"6,12,20",Sultan,Indra,verified
+P038,beratBarangBuktiGram,1.0089,putusan_narkoba_38_2.pdf,20,Sultan,Indra,verified
+P038,pasalDakwaan,Primair Pasal 114 ayat (1); Subsidair Pasal 112 ayat (1) UU RI No. 35 Tahun 2009 tentang Narkotika,putusan_narkoba_38_2.pdf,"7,9,16",Sultan,Indra,verified
+P038,pasalTerbukti,Pasal 114 ayat (1) UU RI No. 35 Tahun 2009 tentang Narkotika,putusan_narkoba_38_2.pdf,"18,20",Sultan,Indra,verified
+P038,tuntutanBulan,90,putusan_narkoba_38_2.pdf,2,Sultan,Indra,verified
+P038,vonisBulan,90,putusan_narkoba_38_2.pdf,20,Sultan,Indra,verified
+P038,dendaRupiah,1500000000,putusan_narkoba_38_2.pdf,20,Sultan,Indra,verified
+P038,barangBukti,"1 bungkus plastik klip daun-daun kering sintetis netto awal 1,2844 gram / sisa uji lab 1,0089 gram dan 1 unit timbangan digital (dimusnahkan); 1 unit telepon genggam merek Vivo warna hitam (dirampas untuk negara)",putusan_narkoba_38_2.pdf,20,Sultan,Indra,verified
+P039,nomorPerkara,1618/Pid.Sus/2024/PN Tng,putusan_narkoba_39_2.pdf,1,Sultan,Indra,verified
+P039,pengadilan,Pengadilan Negeri Tangerang,putusan_narkoba_39_2.pdf,1,Sultan,Indra,verified
+P039,tanggalPutusan,2024-12-05,putusan_narkoba_39_2.pdf,41,Sultan,Indra,verified
+P039,terdakwaKode,"TDW-039-1, TDW-039-2",putusan_narkoba_39_2.pdf,1,Sultan,Indra,verified
+P039,jenisNarkotika,Tembakau sintetis (MDMB-4en PINACA) dan 2-CB,putusan_narkoba_39_2.pdf,"7,26,41",Sultan,Indra,verified
+P039,beratBarangBuktiGram,459.1468,putusan_narkoba_39_2.pdf,41,Sultan,Indra,verified
+P039,pasalDakwaan,Alternatif Pertama Pasal 113 ayat (2) Jo. Pasal 132 ayat (1); Kedua Pasal 114 ayat (2) Jo. Pasal 132 ayat (1); Ketiga Pasal 112 ayat (2) Jo. Pasal 132 ayat (1) UU RI No. 35 Tahun 2009 tentang Narkotika,putusan_narkoba_39_2.pdf,"8,11,15,29",Sultan,Indra,verified
+P039,pasalTerbukti,Pasal 113 ayat (2) Jo. Pasal 132 ayat (1) UU RI No. 35 Tahun 2009 tentang Narkotika,putusan_narkoba_39_2.pdf,"38,40",Sultan,Indra,verified
+P039,tuntutanBulan,132,putusan_narkoba_39_2.pdf,3,Sultan,Indra,verified
+P039,vonisBulan,120,putusan_narkoba_39_2.pdf,40,Sultan,Indra,verified
+P039,dendaRupiah,1000000000,putusan_narkoba_39_2.pdf,40,Sultan,Indra,verified
+P039,barangBukti,"1 plastik daun kering sintetis netto 451,52 gram; 1 plastik klip padatan kuning sintetis netto 6,0684 gram; 1 plastik klip pil hijau (2-CB) netto 1,5584 gram; 1 set alat produksi; 1 timbangan digital (dimusnahkan); 1 HP iPhone 11 Pro hitam; 1 tablet Redmi silver (dirampas untuk negara)",putusan_narkoba_39_2.pdf,41,Sultan,Indra,verified
+P040,nomorPerkara,1664/Pid.Sus/2023/PN.Tng.,putusan_narkoba_40_2.pdf,1,Sultan,Indra,verified
+P040,pengadilan,Pengadilan Negeri Tangerang,putusan_narkoba_40_2.pdf,1,Sultan,Indra,verified
+P040,tanggalPutusan,2023-12-18,putusan_narkoba_40_2.pdf,11,Sultan,Indra,verified
+P040,terdakwaKode,TDW-040,putusan_narkoba_40_2.pdf,1,Sultan,Indra,verified
+P040,jenisNarkotika,Sabu (Metamfetamina),putusan_narkoba_40_2.pdf,"4,9,11",Sultan,Indra,verified
+P040,beratBarangBuktiGram,0.2502,putusan_narkoba_40_2.pdf,11,Sultan,Indra,verified
+P040,pasalDakwaan,Alternatif Pertama Pasal 114 ayat (1); Kedua Pasal 112 ayat (1) UU RI No. 35 Tahun 2009 tentang Narkotika,putusan_narkoba_40_2.pdf,"4,5,8",Sultan,Indra,verified
+P040,pasalTerbukti,Pasal 112 ayat (1) UU No. 35 Tahun 2009 tentang Narkotika (jo. SEMA Nomor 3 Tahun 2015 mengacu Pasal 127 ayat (1) huruf a UU No. 35 Tahun 2009),putusan_narkoba_40_2.pdf,"9,10",Sultan,Indra,verified
+P040,tuntutanBulan,60,putusan_narkoba_40_2.pdf,2,Sultan,Indra,verified
+P040,vonisBulan,24,putusan_narkoba_40_2.pdf,10,Sultan,Indra,verified
+P040,dendaRupiah,0,putusan_narkoba_40_2.pdf,10,Sultan,Indra,verified
+P040,barangBukti,"1 bungkus plastik warna coklat berisi 1 bungkus plastik klip kristal putih (Metamfetamina) netto awal 0,2705 gram / sisa uji lab 0,2502 gram; 1 buah HP merk VIVO warna biru dengan 2 SIM card (dirampas untuk dimusnahkan)",putusan_narkoba_40_2.pdf,11,Sultan,Indra,verified
+P041,nomorPerkara,1671/Pid.Sus/2024/PN Tng,putusan_narkoba_41_2.pdf,1,Sultan,Indra,verified
+P041,pengadilan,Pengadilan Negeri Tangerang,putusan_narkoba_41_2.pdf,1,Sultan,Indra,verified
+P041,tanggalPutusan,2025-01-07,putusan_narkoba_41_2.pdf,22,Sultan,Indra,verified
+P041,terdakwaKode,TDW-041,putusan_narkoba_41_2.pdf,1,Sultan,Indra,verified
+P041,jenisNarkotika,Metamfetamina (Sabu),putusan_narkoba_41_2.pdf,6;16,Sultan,Indra,verified
+P041,beratBarangBuktiGram,3.51,putusan_narkoba_41_2.pdf,3;6,Sultan,Indra,verified
+P041,pasalDakwaan,Pasal 114 ayat (1) atau Pasal 112 ayat (1) UU No. 35 Tahun 2009,putusan_narkoba_41_2.pdf,4;7;17,Sultan,Indra,verified
+P041,pasalTerbukti,Pasal 114 ayat (1) UU No. 35 Tahun 2009,putusan_narkoba_41_2.pdf,17;21,Sultan,Indra,verified
+P041,tuntutanBulan,96,putusan_narkoba_41_2.pdf,2,Sultan,Indra,verified
+P041,vonisBulan,84,putusan_narkoba_41_2.pdf,21,Sultan,Indra,verified
+P041,dendaRupiah,1000000000,putusan_narkoba_41_2.pdf,21,Sultan,Indra,verified
+P041,barangBukti,3 paket sabu total bruto 3.51 gram (0.25g + 0.31g + 2.95g); 1 HP Infinix Hot 11 hijau; 1 timbangan elektrik hitam (dirampas untuk dimusnahkan),putusan_narkoba_41_2.pdf,21,Sultan,Indra,verified
+P041,sourcePages,1;2;4-9;16-22,putusan_narkoba_41_2.pdf,1-22,Sultan,Indra,verified
+P042,nomorPerkara,1706/Pid.Sus/2025/PN.Tng,putusan_narkoba_42_2.pdf,1,Sultan,Indra,verified
+P042,pengadilan,Pengadilan Negeri Tangerang,putusan_narkoba_42_2.pdf,1,Sultan,Indra,verified
+P042,tanggalPutusan,2025-12-09,putusan_narkoba_42_2.pdf,31,Sultan,Indra,verified
+P042,terdakwaKode,TDW-042,putusan_narkoba_42_2.pdf,1,Sultan,Indra,verified
+P042,jenisNarkotika,Metamfetamina (Sabu),putusan_narkoba_42_2.pdf,8;19,Sultan,Indra,verified
+P042,beratBarangBuktiGram,9.7963,putusan_narkoba_42_2.pdf,7-8;18-19;27,Sultan,Indra,verified
+P042,pasalDakwaan,Pasal 114 ayat (2) subsidair Pasal 112 ayat (2) UU No. 35 Tahun 2009,putusan_narkoba_42_2.pdf,4;8;11;22,Sultan,Indra,verified
+P042,pasalTerbukti,Pasal 114 ayat (2) UU No. 35 Tahun 2009,putusan_narkoba_42_2.pdf,28;30,Sultan,Indra,verified
+P042,tuntutanBulan,108,putusan_narkoba_42_2.pdf,2,Sultan,Indra,verified
+P042,vonisBulan,96,putusan_narkoba_42_2.pdf,30,Sultan,Indra,verified
+P042,dendaRupiah,1000000000,putusan_narkoba_42_2.pdf,30,Sultan,Indra,verified
+P042,barangBukti,5 plastik klip sedang berisi 21 klip kecil sabu netto awal 9.7963 gram (sisa lab 9.5917 gram) dan 1 timbangan digital abu-abu (dimusnahkan); 1 HP Samsung J2 hitam (dirampas untuk negara),putusan_narkoba_42_2.pdf,30-31,Sultan,Indra,verified
+P042,sourcePages,1-2;4-11;18-19;22-31,putusan_narkoba_42_2.pdf,1-31,Sultan,Indra,verified
+P043,nomorPerkara,1714/Pid.Sus/2025/PN Tng,putusan_narkoba_43_2.pdf,1,Sultan,Indra,verified
+P043,pengadilan,Pengadilan Negeri Tangerang,putusan_narkoba_43_2.pdf,1,Sultan,Indra,verified
+P043,tanggalPutusan,2025-12-02,putusan_narkoba_43_2.pdf,20,Sultan,Indra,verified
+P043,terdakwaKode,TDW-043,putusan_narkoba_43_2.pdf,1,Sultan,Indra,verified
+P043,jenisNarkotika,MDMB-4en-PINACA (Tembakau Sintetis),putusan_narkoba_43_2.pdf,11;17,Sultan,Indra,verified
+P043,beratBarangBuktiGram,6.2805,putusan_narkoba_43_2.pdf,5;11;17,Sultan,Indra,verified
+P043,pasalDakwaan,Pasal 114 ayat (1) atau Pasal 112 ayat (1) UU No. 35 Tahun 2009,putusan_narkoba_43_2.pdf,3;5;6;13,Sultan,Indra,verified
+P043,pasalTerbukti,Pasal 114 ayat (1) UU No. 35 Tahun 2009,putusan_narkoba_43_2.pdf,17-19,Sultan,Indra,verified
+P043,tuntutanBulan,66,putusan_narkoba_43_2.pdf,2,Sultan,Indra,verified
+P043,vonisBulan,60,putusan_narkoba_43_2.pdf,19,Sultan,Indra,verified
+P043,dendaRupiah,3000000000,putusan_narkoba_43_2.pdf,19,Sultan,Indra,verified
+P043,barangBukti,9 bungkus plastik klip MDMB-4en-PINACA netto awal 6.2805 gram (sisa lab 5.9851 gram) dan 1 kantong bertuliskan Honda (dimusnahkan); 1 HP Infinix Smart 8 gold dan uang tunai Rp414.000 (dirampas untuk negara),putusan_narkoba_43_2.pdf,19-20,Sultan,Indra,verified
+P043,sourcePages,1-6;11;13-20,putusan_narkoba_43_2.pdf,1-20,Sultan,Indra,verified
+P044,nomorPerkara,1852/Pid.Sus/2025/PN Tng,putusan_narkoba_44_2.pdf,1,Sultan,Indra,verified
+P044,pengadilan,Pengadilan Negeri Tangerang,putusan_narkoba_44_2.pdf,1,Sultan,Indra,verified
+P044,tanggalPutusan,2025-12-03,putusan_narkoba_44_2.pdf,19-20,Sultan,Indra,verified
+P044,terdakwaKode,TDW-044,putusan_narkoba_44_2.pdf,1,Sultan,Indra,verified
+P044,jenisNarkotika,MDMB-4en-PINACA (Tembakau Sintetis),putusan_narkoba_44_2.pdf,5;12;17,Sultan,Indra,verified
+P044,beratBarangBuktiGram,3.6382,putusan_narkoba_44_2.pdf,5;7;12;17,Sultan,Indra,verified
+P044,pasalDakwaan,Pasal 114 ayat (1) atau Pasal 112 ayat (1) UU No. 35 Tahun 2009,putusan_narkoba_44_2.pdf,3;5;13,Sultan,Indra,verified
+P044,pasalTerbukti,Pasal 112 ayat (1) UU No. 35 Tahun 2009,putusan_narkoba_44_2.pdf,13;17-18,Sultan,Indra,verified
+P044,tuntutanBulan,60,putusan_narkoba_44_2.pdf,2,Sultan,Indra,verified
+P044,vonisBulan,72,putusan_narkoba_44_2.pdf,19,Sultan,Indra,verified
+P044,dendaRupiah,1000000000,putusan_narkoba_44_2.pdf,19,Sultan,Indra,verified
+P044,barangBukti,1 dompet cokelat; 1 plastik klip A1; 7 bungkus plastik klip MDMB-4en-PINACA netto awal 3.6382 gram (sisa lab 3.4775 gram) (dimusnahkan); 1 HP Samsung A14 silver dan 1 HP Redmi 9C biru (dirampas untuk negara),putusan_narkoba_44_2.pdf,19,Sultan,Indra,verified
+P044,sourcePages,1-7;10;12-20,putusan_narkoba_44_2.pdf,1-20,Sultan,Indra,verified
+P045,nomorPerkara,1873/Pid.Sus/2024/PN Tng,putusan_narkoba_45_2.pdf,1,Sultan,Indra,verified
+P045,pengadilan,Pengadilan Negeri Tangerang,putusan_narkoba_45_2.pdf,1,Sultan,Indra,verified
+P045,tanggalPutusan,2025-02-03,putusan_narkoba_45_2.pdf,16,Sultan,Indra,verified
+P045,terdakwaKode,TDW-045,putusan_narkoba_45_2.pdf,1,Sultan,Indra,verified
+P045,jenisNarkotika,Metamfetamina (Sabu),putusan_narkoba_45_2.pdf,4;6;10,Sultan,Indra,verified
+P045,beratBarangBuktiGram,2.98,putusan_narkoba_45_2.pdf,6;10,Sultan,Indra,verified
+P045,pasalDakwaan,Pasal 114 ayat (1) jo. Pasal 132 ayat (1) atau Pasal 112 ayat (1) jo. Pasal 132 ayat (1) UU No. 35 Tahun 2009,putusan_narkoba_45_2.pdf,3-6;11-12,Sultan,Indra,verified
+P045,pasalTerbukti,Pasal 114 ayat (1) jo. Pasal 132 ayat (1) UU No. 35 Tahun 2009,putusan_narkoba_45_2.pdf,14-15,Sultan,Indra,verified
+P045,tuntutanBulan,78,putusan_narkoba_45_2.pdf,2,Sultan,Indra,verified
+P045,vonisBulan,72,putusan_narkoba_45_2.pdf,15,Sultan,Indra,verified
+P045,dendaRupiah,6000000000,putusan_narkoba_45_2.pdf,15,Sultan,Indra,verified
+P045,barangBukti,1 unit HP merk Oppo warna hitam (dirampas untuk dimusnahkan); catatan: 6 bungkus plastik klip sabu netto awal 2.98 gram Lab BNN / 1.2953 gram Lab Bareskrim disita pada berkas terpisah saksi Ayadih,putusan_narkoba_45_2.pdf,10;15-16,Sultan,Indra,verified
+P045,sourcePages,1-6;10-16,putusan_narkoba_45_2.pdf,1-17,Sultan,Indra,verified
+P046,nomorPerkara,1923/Pid.Sus/2024/PN Tng,putusan_narkoba_46_2.pdf,1,Sultan,Indra,verified
+P046,pengadilan,Pengadilan Negeri Tangerang,putusan_narkoba_46_2.pdf,1,Sultan,Indra,verified
+P046,tanggalPutusan,2025-03-05,putusan_narkoba_46_2.pdf,32-33,Sultan,Indra,verified
+P046,terdakwaKode,TDW-046,putusan_narkoba_46_2.pdf,1,Sultan,Indra,verified
+P046,jenisNarkotika,Ganja,putusan_narkoba_46_2.pdf,6-7;22-23,Sultan,Indra,verified
+P046,beratBarangBuktiGram,1638.0295,putusan_narkoba_46_2.pdf,7;23;29,Sultan,Indra,verified
+P046,pasalDakwaan,Pasal 114 ayat (2) jo. Pasal 132 ayat (1) atau Pasal 111 ayat (2) atau Pasal 127 ayat (1) huruf a atau Pasal 131 UU No. 35 Tahun 2009,putusan_narkoba_46_2.pdf,3;7;11;15;18;26,Sultan,Indra,verified
+P046,pasalTerbukti,Pasal 114 ayat (2) jo. Pasal 132 ayat (1) UU No. 35 Tahun 2009,putusan_narkoba_46_2.pdf,26;30-32,Sultan,Indra,verified
+P046,tuntutanBulan,120,putusan_narkoba_46_2.pdf,2,Sultan,Indra,verified
+P046,vonisBulan,84,putusan_narkoba_46_2.pdf,32,Sultan,Indra,verified
+P046,dendaRupiah,1000000000,putusan_narkoba_46_2.pdf,32,Sultan,Indra,verified
+P046,barangBukti,1 tas belanja Alfamart kain (eco bag) bertuliskan Gogreen merah; 1 plastik kresek hitam; 1 timbangan digital SF-400 putih; 7 plastik klip bening angka 65 berisi ganja bruto 442g / netto 392.1647g (sisa lab 391.5157g); 6 plastik klip bening angka 75 berisi ganja bruto 432g / netto 412.0048g (sisa lab 411.2448g); 1 bungkusan kotak lakban coklat berisi ganja bruto 893g / netto 833.8600g (sisa lab 832.1600g) (dikembalikan kepada Penuntut Umum untuk perkara Muhammad Wahyudi alias Au),putusan_narkoba_46_2.pdf,30-32,Sultan,Indra,verified
+P046,sourcePages,1-3;6-7;11;15;18;22-23;26;29-33,putusan_narkoba_46_2.pdf,1-33,Sultan,Indra,verified
+P047,nomorPerkara,1989/Pid.Sus/2024/PN Tng,putusan_narkoba_47_2.pdf,1,Sultan,Indra,verified
+P047,pengadilan,Pengadilan Negeri Tangerang,putusan_narkoba_47_2.pdf,1,Sultan,Indra,verified
+P047,tanggalPutusan,2025-01-22,putusan_narkoba_47_2.pdf,24,Sultan,Indra,verified
+P047,terdakwaKode,TDW-047,putusan_narkoba_47_2.pdf,1,Sultan,Indra,verified
+P047,jenisNarkotika,Metamfetamina (Sabu),putusan_narkoba_47_2.pdf,5;13,Sultan,Indra,verified
+P047,beratBarangBuktiGram,17.1979,putusan_narkoba_47_2.pdf,5;13;24,Sultan,Indra,verified
+P047,pasalDakwaan,Alternatif Kesatu: Pasal 114 ayat (2); Kedua: Pasal 112 ayat (2) UU RI No. 35 Tahun 2009,putusan_narkoba_47_2.pdf,3;5;7,Sultan,Indra,verified
+P047,pasalTerbukti,Pasal 114 ayat (2) UU RI No. 35 Tahun 2009,putusan_narkoba_47_2.pdf,21;23,Sultan,Indra,verified
+P047,tuntutanBulan,108,putusan_narkoba_47_2.pdf,2,Sultan,Indra,verified
+P047,vonisBulan,96,putusan_narkoba_47_2.pdf,23,Sultan,Indra,verified
+P047,dendaRupiah,4000000000,putusan_narkoba_47_2.pdf,23,Sultan,Indra,verified
+P047,barangBukti,"1 buah bekas kotak jam expedition warna merah berisi 10 bungkus plastik klip bening kode 1-10 berisi narkotika jenis sabu berat brutto 20,18 gram (netto awal 17,5022 gram, netto akhir 17,1979 gram); 5 bungkus klip bening kosong; 3 bungkus plastik bekas permen Yupi; 1 buah potongan sedotan warna merah; 1 buah timbangan elektrik; 1 buah handphone merk Oppo warna biru (dirampas untuk dimusnahkan)",putusan_narkoba_47_2.pdf,22;23-24,Sultan,Indra,verified
+P047,sourcePages,1-3;5-7;13;15;17-24,putusan_narkoba_47_2.pdf,1-24,Sultan,Indra,verified
+P048,nomorPerkara,2181/Pid.Sus/2024/PN Tng,putusan_narkoba_48_2.pdf,1,Sultan,Indra,verified
+P048,pengadilan,Pengadilan Negeri Tangerang,putusan_narkoba_48_2.pdf,1,Sultan,Indra,verified
+P048,tanggalPutusan,2025-03-06,putusan_narkoba_48_2.pdf,82,Sultan,Indra,verified
+P048,terdakwaKode,TDW-048,putusan_narkoba_48_2.pdf,1,Sultan,Indra,verified
+P048,jenisNarkotika,Tembakau Sintetis (MDMB-4en-PINACA),putusan_narkoba_48_2.pdf,18;42;60,Sultan,Indra,verified
+P048,beratBarangBuktiGram,139.8698,putusan_narkoba_48_2.pdf,2-6;36-39;73-82,Sultan,Indra,verified
+P048,pasalDakwaan,Primair: Pasal 114 ayat (1); Subsidair: Pasal 112 ayat (1) UU RI No. 35 Tahun 2009,putusan_narkoba_48_2.pdf,6;18;29;54,Sultan,Indra,verified
+P048,pasalTerbukti,Pasal 114 ayat (1) UU RI No. 35 Tahun 2009,putusan_narkoba_48_2.pdf,68;78,Sultan,Indra,verified
+P048,tuntutanBulan,96,putusan_narkoba_48_2.pdf,2,Sultan,Indra,verified
+P048,vonisBulan,108,putusan_narkoba_48_2.pdf,78,Sultan,Indra,verified
+P048,dendaRupiah,1000000000,putusan_narkoba_48_2.pdf,78,Sultan,Indra,verified
+P048,barangBukti,"1 bungkus plastik hitam berisi 1 bungkus plastik merah berisi narkotika jenis sintetis (MDMB-4en-PINACA) daun kering berat netto 28,3315 gram dan 1 unit timbangan digital; 1 tas selempang kecil berisi 43 bungkus plastik klip bening kode A-QQ berisi narkotika jenis sintetis daun kering total netto 111,5383 gram (total netto akhir keseluruhan 139,8698 gram; tertulis dalam pertimbangan 144,7978 gram; netto awal 149,9749 gram) (dirampas untuk dimusnahkan); 1 unit handphone merk Oppo warna hitam (dirampas untuk negara)",putusan_narkoba_48_2.pdf,73-82,Sultan,Indra,verified
+P048,sourcePages,1-6;14-18;25-29;36-42;54;57-60;68;73-82,putusan_narkoba_48_2.pdf,1-82,Sultan,Indra,verified
+P049,nomorPerkara,88/Pid.Sus/2025/PN Tng,putusan_narkoba_49_2.pdf,1,Sultan,Indra,verified
+P049,pengadilan,Pengadilan Negeri Tangerang,putusan_narkoba_49_2.pdf,1,Sultan,Indra,verified
+P049,tanggalPutusan,2025-03-06,putusan_narkoba_49_2.pdf,18-19,Sultan,Indra,verified
+P049,terdakwaKode,TDW-049,putusan_narkoba_49_2.pdf,1,Sultan,Indra,verified
+P049,jenisNarkotika,Metamfetamina (Sabu),putusan_narkoba_49_2.pdf,5;10;16,Sultan,Indra,verified
+P049,beratBarangBuktiGram,1.8639,putusan_narkoba_49_2.pdf,5;7;10;16,Sultan,Indra,verified
+P049,pasalDakwaan,Alternatif Pertama: Pasal 114 ayat (1); Kedua: Pasal 112 ayat (1) UU RI No. 35 Tahun 2009,putusan_narkoba_49_2.pdf,3;5;8;13,Sultan,Indra,verified
+P049,pasalTerbukti,Pasal 114 ayat (1) UU RI No. 35 Tahun 2009,putusan_narkoba_49_2.pdf,16;18,Sultan,Indra,verified
+P049,tuntutanBulan,90,putusan_narkoba_49_2.pdf,2,Sultan,Indra,verified
+P049,vonisBulan,84,putusan_narkoba_49_2.pdf,18,Sultan,Indra,verified
+P049,dendaRupiah,1000000000,putusan_narkoba_49_2.pdf,18,Sultan,Indra,verified
+P049,barangBukti,"1 buah bungkus rokok Sampoerna Mild berisi 1 bungkus plastik klip berisi kristal narkotika jenis sabu (Metamfetamina) berat brutto 2,1 gram (netto awal 1,8854 gram, netto akhir 1,8639 gram, kode 5468/2024/NF); 1 buah handphone merk Infinix Note 40 warna hitam (dirampas untuk dimusnahkan)",putusan_narkoba_49_2.pdf,17-18,Sultan,Indra,verified
+P049,sourcePages,1-3;5;7-8;10;12-19,putusan_narkoba_49_2.pdf,1-19,Sultan,Indra,verified
+P050,nomorPerkara,1383/Pid.Sus/2026/PN Tng,putusan_narkoba_50.pdf,1,Sultan,Indra,verified
+P050,pengadilan,Pengadilan Negeri Tangerang,putusan_narkoba_50.pdf,1,Sultan,Indra,verified
+P050,tanggalPutusan,2026-10-06,putusan_narkoba_50.pdf,39,Sultan,Indra,verified
+P050,terdakwaKode,TDW-051,putusan_narkoba_50.pdf,1,Sultan,Indra,verified
+P050,jenisNarkotika,Metamfetamina (Sabu),putusan_narkoba_50.pdf,3;8;37,Sultan,Indra,verified
+P050,beratBarangBuktiGram,1.3468,putusan_narkoba_50.pdf,3;7;39,Sultan,Indra,verified
+P050,pasalDakwaan,Alternatif Pertama: Pasal 114 ayat (1) UU RI No. 35 Tahun 2009 jo. Lampiran II UU RI No. 1 Tahun 2026 tentang Penyesuaian Pidana jo. Pasal 20 huruf c UU No. 1 Tahun 2023 tentang KUHP; Atau Kedua: Pasal 609 ayat (1) huruf a UU RI No. 01 Tahun 2023 tentang KUHP jo. Pasal VII angka 50 UU RI No. 1 Tahun 2026,putusan_narkoba_50.pdf,8;11;27,Sultan,Indra,verified
+P050,pasalTerbukti,Pasal 114 ayat (1) UU RI Nomor 35 Tahun 2009 tentang Narkotika jo. Lampiran II UU RI Nomor 1 Tahun 2026 tentang Penyesuaian Pidana jo. Pasal 20 huruf c UU Nomor 1 Tahun 2023 tentang KUHP,putusan_narkoba_50.pdf,38,Sultan,Indra,verified
+P050,tuntutanBulan,102,putusan_narkoba_50.pdf,2,Sultan,Indra,verified
+P050,vonisBulan,96,putusan_narkoba_50.pdf,38,Sultan,Indra,verified
+P050,dendaRupiah,1000000000,putusan_narkoba_50.pdf,38,Sultan,Indra,verified
+P050,barangBukti,"18 bungkus plastik klip berisi kristal putih narkotika jenis sabu brutto 3,18 gram (netto awal 1,0370 gram kode 3503/2026/NF dan 0,3098 gram kode 3504/2026/NF; sisa lab 1,0282 gram dan 0,2906 gram) dirampas untuk dimusnahkan; 1 unit Handphone merk Pocco warna hitam dan 1 unit sepeda motor Yamaha Mio Soul warna biru No. Pol B. 6175. VEA dirampas untuk negara",putusan_narkoba_50.pdf,37;39,Sultan,Indra,verified
+P050,sourcePages,1-3;7-8;11;27;37-39,putusan_narkoba_50.pdf,1-39,Sultan,Indra,verified
