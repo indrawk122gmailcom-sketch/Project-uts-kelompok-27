@@ -1,21 +1,21 @@
 public class Putusan {
-    private final String caseId;
-    private final String nomorPerkara;
-    private final String pengadilan;
-    private final String tanggalPutusan;
-    private final String terdakwaKode;
-    private final String jenisNarkotika;
+    private String caseId;
+    private String nomorPerkara;
+    private String pengadilan;
+    private String tanggalPutusan;
+    private String terdakwaKode;
+    private String jenisNarkotika;
     private double beratBarangBuktiGram;
-    private final String pasalDakwaan;
+    private String pasalDakwaan;
     private String pasalTerbukti;
-    private final int tuntutanBulan;
+    private int tuntutanBulan;
     private int vonisBulan;
     private long dendaRupiah;
-    private final String barangBukti;
-    private final String keadaanMemberatkan;
-    private final String keadaanMeringankan;
-    private final String sourcePages;
-    private final String provenance;
+    private String barangBukti;
+    private String keadaanMemberatkan;
+    private String keadaanMeringankan;
+    private String sourcePages;
+    private String provenance;
 
     public Putusan(String caseId, String nomorPerkara, String pengadilan, String tanggalPutusan,
                    String terdakwaKode, String jenisNarkotika, double beratBarangBuktiGram,
@@ -41,6 +41,16 @@ public class Putusan {
         this.provenance = provenance;
     }
 
+    public Putusan salin() {
+        return new Putusan(
+                this.caseId, this.nomorPerkara, this.pengadilan, this.tanggalPutusan,
+                this.terdakwaKode, this.jenisNarkotika, this.beratBarangBuktiGram,
+                this.pasalDakwaan, this.pasalTerbukti, this.tuntutanBulan, this.vonisBulan,
+                this.dendaRupiah, this.barangBukti, this.keadaanMemberatkan,
+                this.keadaanMeringankan, this.sourcePages, this.provenance
+        );
+    }
+
     public String getCaseId() { return caseId; }
     public String getNomorPerkara() { return nomorPerkara; }
     public String getPengadilan() { return pengadilan; }
@@ -59,44 +69,12 @@ public class Putusan {
     public String getSourcePages() { return sourcePages; }
     public String getProvenance() { return provenance; }
 
-    public void setBeratBarangBuktiGram(double beratBarangBuktiGram) {
-        this.beratBarangBuktiGram = beratBarangBuktiGram;
-    }
-
-    public void setPasalTerbukti(String pasalTerbukti) {
-        this.pasalTerbukti = pasalTerbukti;
-    }
-
-    public void setVonisBulan(int vonisBulan) {
-        this.vonisBulan = vonisBulan;
-    }
-
-    public void setDendaRupiah(long dendaRupiah) {
-        this.dendaRupiah = dendaRupiah;
-    }
-
-    public Putusan salin() {
-        return new Putusan(
-                caseId, nomorPerkara, pengadilan, tanggalPutusan, terdakwaKode,
-                jenisNarkotika, beratBarangBuktiGram, pasalDakwaan, pasalTerbukti,
-                tuntutanBulan, vonisBulan, dendaRupiah, barangBukti,
-                keadaanMemberatkan, keadaanMeringankan, sourcePages, provenance
-        );
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (!(obj instanceof Putusan)) return false;
-        Putusan other = (Putusan) obj;
-        return this.caseId != null && other.caseId != null
-                && this.caseId.equalsIgnoreCase(other.caseId);
-    }
+    public void setVonisBulan(int vonisBulan) { this.vonisBulan = vonisBulan; }
+    public void setPasalTerbukti(String pasalTerbukti) { this.pasalTerbukti = pasalTerbukti; }
 
     @Override
     public String toString() {
-        return String.format("[%s] %s | %s | %s (%.2f gr) | Pasal %s | Vonis: %d bln | Denda: Rp%,d",
-                caseId, nomorPerkara, pengadilan, jenisNarkotika,
-                beratBarangBuktiGram, pasalTerbukti, vonisBulan, dendaRupiah);
+        return String.format("[%s] %s | %s | Berat: %.4f g | Tuntutan: %d bln | Vonis: %d bln | Denda: Rp%,d",
+                caseId, nomorPerkara, jenisNarkotika, beratBarangBuktiGram, tuntutanBulan, vonisBulan, dendaRupiah);
     }
 }
