@@ -1,3 +1,4 @@
+import java.io.File;
 import java.io.IOException;
 
 public class MainTest {
@@ -6,7 +7,7 @@ public class MainTest {
     private static int gagal = 0;
 
     public static void main(String[] args) {
-        System.out.println("=== MENJALANKAN SUITE PENGUJIAN (13 SKENARIO LENGKAP) ===");
+        System.out.println("=== MENJALANKAN SUITE PENGUJIAN (16 SKENARIO LENGKAP) ===");
 
         test1_EkspansiKapasitasArrayDinamis();
         test2_TambahPutusanDanTolakDuplikatCaseId();
@@ -21,6 +22,9 @@ public class MainTest {
         test11_PencarianBatasDanPencacahLangkah();
         test12_HapusDanTambahKembaliPosisiPertamaTengahTerakhir();
         test13_PenelusuranStackAuditNonDestruktifDanClear();
+        test14_AgregasiStatistikPutusan();
+        test15_SortingManualNonDestruktif();
+        test16_EksporHasilKeCsv();
 
         System.out.println("\n=== RINGKASAN HASIL PENGUJIAN ===");
         System.out.println("Total Skenario : " + (lulus + gagal));
@@ -178,9 +182,6 @@ public class MainTest {
         PengelolaPutusan pengelola = new PengelolaPutusan();
         try {
             int dimuat = pengelola.muatDariCsv("data/putusan-50.csv");
-            if (dimuat != 50) {
-                System.err.println("Detail Skenario 10: Terbaca = " + dimuat + ", jumlahData = " + pengelola.jumlahData());
-            }
             assertTrue(dimuat == 50 && pengelola.jumlahData() == 50 && pengelola.validateInvariants(),
                     "Skenario 10: Muat tepat 50 record dari data/putusan-50.csv & invariant valid");
         } catch (IOException e) {
@@ -193,65 +194,127 @@ public class MainTest {
         try {
             pengelola.muatDariCsv("data/putusan-50.csv");
             int n = pengelola.jumlahData();
-            if (n < 2) {
-                assertTrue(false, "Skenario 11: Data tidak cukup untuk uji batas (size=" + n + ")");
-                return;
-            }
             String idPertama = pengelola.getSemuaPutusan().get(0).getCaseId();
             String idTerakhir = pengelola.getSemuaPutusan().get(n - 1).getCaseId();
 
-            PengelolaPutusan.HasilPencarian cariPertama = pengelola.cariDenganLangkah(idPertama);
-            PengelolaPutusan.HasilPencarian cariTerakhir = pengelola.cariDenganLangkah(idTerakhir);
-            PengelolaPutusan.HasilPencarian cariTidakAda = pengelola.cariDenganLangkah("TIDAK-ADA-999");
+            PengelolaPutusan.HasilPencarian awal = pengelola.cariDenganLangkah(idPertama);
+            PengelolaPutusan.HasilPencarian akhir = pengelola.cariDenganLangkah(idTerakhir);
+            PengelolaPutusan.HasilPencarian tidakAda = pengelola.cariDenganLangkah("ID-TIDAK-ADA-999");
 
-            assertTrue(n == 50
-                            && cariPertama.ditemukan() && cariPertama.jumlahLangkah == 1
-                            && cariTerakhir.ditemukan() && cariTerakhir.jumlahLangkah == n
-                            && !cariTidakAda.ditemukan() && cariTidakAda.jumlahLangkah == n,
-                    "Skenario 11: Pencarian posisi batas (1 & " + n + ") & pencacah langkah akurat");
+            assertTrue(awal.ditemukan() && awal.indeks == 0 && awal.jumlahLangkah == 1
+                            && akhir.ditemukan() && akhir.indeks == n - 1 && akhir.jumlahLangkah == n
+                            && !tidakAda.ditemukan() && tidakAda.indeks == -1 && tidakAda.jumlahLangkah == n,
+                    "Skenario 11: Pencarian batas (awal=1 langkah, akhir=" + n + " langkah, tidak ada=" + n + " langkah)");
         } catch (IOException e) {
-            assertTrue(false, "Skenario 11 gagal membaca CSV: " + e.getMessage());
+            assertTrue(false, "Skenario 11 gagal: " + e.getMessage());
         }
     }
 
     private static void test12_HapusDanTambahKembaliPosisiPertamaTengahTerakhir() {
         PengelolaPutusan pengelola = new PengelolaPutusan();
-        for (int i = 1; i <= 5; i++) {
-            pengelola.tambahPutusan(buatSampel("P0" + i, "Sabu", i * 1.0, 60, 48 + i, 1000000000L));
+        try {
+            pengelola.muatDariCsv("data/putusan-50.csv");
+            int n = pengelola.jumlahData();
+            Putusan pertama = pengelola.getSemuaPutusan().get(0).salin();
+            Putusan tengah = pengelola.getSemuaPutusan().get(n / 2).salin();
+            Putusan terakhir = pengelola.getSemuaPutusan().get(n - 1).salin();
+
+            boolean h1 = pengelola.hapusPutusan(pertama.getCaseId());
+            boolean h2 = pengelola.hapusPutusan(tengah.getCaseId());
+            boolean h3 = pengelola.hapusPutusan(terakhir.getCaseId());
+            boolean berkurang = (pengelola.jumlahData() == n - 3);
+
+            boolean u1 = pengelola.undo();
+            boolean u2 = pengelola.undo();
+            boolean u3 = pengelola.undo();
+            boolean pulihSemua = (pengelola.jumlahData() == n)
+                    && pengelola.getSemuaPutusan().get(0).getCaseId().equals(pertama.getCaseId())
+                    && pengelola.getSemuaPutusan().get(n / 2).getCaseId().equals(tengah.getCaseId())
+                    && pengelola.getSemuaPutusan().get(n - 1).getCaseId().equals(terakhir.getCaseId());
+
+            assertTrue(h1 && h2 && h3 && berkurang && u1 && u2 && u3 && pulihSemua && pengelola.validateInvariants(),
+                    "Skenario 12: Hapus & pulihkan kembali (undo) posisi pertama, tengah, dan terakhir");
+        } catch (IOException e) {
+            assertTrue(false, "Skenario 12 gagal: " + e.getMessage());
         }
-
-        boolean h1 = pengelola.hapusPutusan("P01");
-        boolean h2 = pengelola.hapusPutusan("P03");
-        boolean h3 = pengelola.hapusPutusan("P05");
-        boolean sisaSesuai = pengelola.jumlahData() == 2
-                && pengelola.getSemuaPutusan().get(0).getCaseId().equals("P02")
-                && pengelola.getSemuaPutusan().get(1).getCaseId().equals("P04");
-
-        pengelola.tambahPutusan(buatSampel("P01", "Sabu", 1.0, 60, 49, 1000000000L));
-        pengelola.tambahPutusan(buatSampel("P03", "Sabu", 3.0, 60, 51, 1000000000L));
-        pengelola.tambahPutusan(buatSampel("P05", "Sabu", 5.0, 60, 53, 1000000000L));
-
-        assertTrue(h1 && h2 && h3 && sisaSesuai && pengelola.jumlahData() == 5 && pengelola.validateInvariants(),
-                "Skenario 12: Hapus posisi pertama/tengah/terakhir, tambah kembali & invariant terjaga");
     }
 
     private static void test13_PenelusuranStackAuditNonDestruktifDanClear() {
         PengelolaPutusan pengelola = new PengelolaPutusan();
-        pengelola.tambahPutusan(buatSampel("A1", "Sabu", 1.0, 60, 48, 1000000000L));
-        pengelola.tambahPutusan(buatSampel("A2", "Ganja", 2.0, 72, 60, 1000000000L));
+        pengelola.tambahPutusan(buatSampel("41", "Sabu", 1.0, 60, 48, 1000000000L));
+        pengelola.ubahVonisBulan("41", 60);
+        pengelola.hapusPutusan("41");
 
-        StackAudit.EntriAudit topSebelum = pengelola.lihatAuditTerakhir();
+        int sebelumBaca = pengelola.jumlahRiwayatAudit();
         ArrayDinamis<StackAudit.EntriAudit> riwayat = pengelola.getSemuaRiwayatAudit();
-        StackAudit.EntriAudit topSesudah = pengelola.lihatAuditTerakhir();
+        int setelahBaca = pengelola.jumlahRiwayatAudit();
 
-        ArrayDinamis<String> ujiClear = new ArrayDinamis<>(4);
-        ujiClear.add("X");
-        ujiClear.clear();
+        boolean nonDestruktif = (sebelumBaca == 3 && setelahBaca == 3 && riwayat.size() == 3
+                && riwayat.get(0).jenisAksi.equals("HAPUS")
+                && riwayat.get(2).jenisAksi.equals("TAMBAH"));
 
-        assertTrue(riwayat.size() == 2
-                        && topSebelum == topSesudah
-                        && pengelola.validateInvariants()
-                        && ujiClear.isEmpty() && ujiClear.validateInvariant(),
-                "Skenario 13: Penelusuran StackAudit non-destruktif menjaga urutan LIFO & clear() valid");
+        StackAudit<String> stackUji = new StackAudit<>();
+        stackUji.push("A");
+        stackUji.push("B");
+        boolean adaA = stackUji.contains("A");
+        stackUji.clear();
+        boolean kosongValid = stackUji.isEmpty() && stackUji.size() == 0 && stackUji.validateInvariant();
+
+        assertTrue(nonDestruktif && adaA && kosongValid && pengelola.validateInvariants(),
+                "Skenario 13: Penelusuran StackAudit non-destruktif & operasi clear()");
+    }
+
+    private static void test14_AgregasiStatistikPutusan() {
+        PengelolaPutusan pengelola = new PengelolaPutusan();
+        pengelola.tambahPutusan(buatSampel("101", "Sabu", 2.0, 72, 60, 1000000000L));
+        pengelola.tambahPutusan(buatSampel("102", "Sabu", 4.0, 96, 84, 1000000000L));
+        pengelola.tambahPutusan(buatSampel("103", "Ganja", 6.0, 60, 48, 1000000000L));
+
+        PengelolaPutusan.RingkasanStatistik stat = pengelola.hitungStatistik();
+        boolean valid = (stat.totalKasus == 3)
+                && (stat.vonisMinimumBulan == 48)
+                && (stat.vonisMaksimumBulan == 84)
+                && (Math.abs(stat.rataRataVonisBulan - 64.0) < 0.001)
+                && (Math.abs(stat.rataRataBeratGram - 4.0) < 0.001)
+                && (stat.jumlahJenisUnik == 2);
+
+        assertTrue(valid, "Skenario 14: Agregasi statistik (rata-rata/min/max vonis, berat, distribusi jenis)");
+    }
+
+    private static void test15_SortingManualNonDestruktif() {
+        PengelolaPutusan pengelola = new PengelolaPutusan();
+        pengelola.tambahPutusan(buatSampel("201", "Sabu", 5.0, 96, 84, 1000000000L));
+        pengelola.tambahPutusan(buatSampel("202", "Ganja", 1.5, 60, 48, 1000000000L));
+        pengelola.tambahPutusan(buatSampel("203", "Sabu", 12.0, 144, 120, 2000000000L));
+
+        ArrayDinamis<Putusan> urutVonisAsc = pengelola.urutkanByVonis(true);
+        ArrayDinamis<Putusan> urutBeratDesc = pengelola.urutkanByBerat(false);
+
+        boolean terurut = urutVonisAsc.get(0).getVonisBulan() == 48
+                && urutVonisAsc.get(2).getVonisBulan() == 120
+                && Double.compare(urutBeratDesc.get(0).getBeratBarangBuktiGram(), 12.0) == 0;
+        boolean asliUtuh = pengelola.getSemuaPutusan().get(0).getCaseId().equals("201");
+
+        assertTrue(terurut && asliUtuh && pengelola.validateInvariants(),
+                "Skenario 15: Sorting manual (vonis & berat) non-destruktif");
+    }
+
+    private static void test16_EksporHasilKeCsv() {
+        PengelolaPutusan pengelola = new PengelolaPutusan();
+        pengelola.tambahPutusan(buatSampel("301", "Sabu", 1.25, 72, 60, 1000000000L));
+        pengelola.tambahPutusan(buatSampel("302", "Ganja", 10.5, 84, 72, 1000000000L));
+
+        String pathUji = "output/test-ekspor.csv";
+        try {
+            int jumlah = pengelola.eksporKeCsv(pathUji, pengelola.urutkanByVonis(false));
+            File f = new File(pathUji);
+            boolean ada = (jumlah == 2 && f.exists() && f.length() > 0);
+            if (f.exists()) {
+                f.delete();
+            }
+            assertTrue(ada, "Skenario 16: Ekspor hasil sorting ke berkas CSV menggunakan BufferedWriter");
+        } catch (IOException e) {
+            assertTrue(false, "Skenario 16 gagal ekspor CSV: " + e.getMessage());
+        }
     }
 }

@@ -29,6 +29,9 @@ public class Main {
             System.out.println("8. Hapus Putusan");
             System.out.println("9. Undo Perubahan Terakhir (Stack Audit)");
             System.out.println("10. Tampilkan Seluruh Riwayat Audit (Non-Destruktif)");
+            System.out.println("11. Laporan Statistik & Agregasi Putusan");
+            System.out.println("12. Urutkan Putusan (Insertion Sort Manual)");
+            System.out.println("13. Ekspor Data Putusan ke CSV");
             System.out.println("0. Keluar");
             System.out.print("Pilih menu: ");
 
@@ -181,6 +184,82 @@ public class Main {
                             StackAudit.EntriAudit entri = riwayat.get(i);
                             System.out.println((i + 1) + ". [" + entri.jenisAksi + "] " + entri.keterangan);
                         }
+                    }
+                    break;
+
+                case "11":
+                    PengelolaPutusan.RingkasanStatistik stat = pengelola.hitungStatistik();
+                    if (stat.totalKasus == 0) {
+                        System.out.println("(Belum ada data putusan untuk dihitung statistiknya)");
+                    } else {
+                        System.out.println("\n--- LAPORAN STATISTIK & AGREGASI PUTUSAN ---");
+                        System.out.println("Total Kasus            : " + stat.totalKasus);
+                        System.out.println("Vonis Minimum          : " + stat.vonisMinimumBulan + " bulan");
+                        System.out.println("Vonis Maksimum         : " + stat.vonisMaksimumBulan + " bulan");
+                        System.out.printf("Rata-Rata Vonis        : %.2f bulan%n", stat.rataRataVonisBulan);
+                        System.out.printf("Total Berat Bukti      : %.4f gram%n", stat.totalBeratGram);
+                        System.out.printf("Rata-Rata Berat Bukti  : %.4f gram%n", stat.rataRataBeratGram);
+                        System.out.println("Distribusi Jenis Narkotika (" + stat.jumlahJenisUnik + " kategori):");
+                        for (int i = 0; i < stat.jumlahJenisUnik; i++) {
+                            System.out.println("  - " + stat.daftarJenis[i] + ": " + stat.jumlahPerJenis[i] + " kasus");
+                        }
+                    }
+                    break;
+
+                case "12":
+                    System.out.println("Pilih mode pengurutan (non-destruktif):");
+                    System.out.println("1. Vonis Terpendek -> Terlama (Ascending)");
+                    System.out.println("2. Vonis Terlama -> Terpendek (Descending)");
+                    System.out.println("3. Berat Barang Bukti Terkecil -> Terbesar (Ascending)");
+                    System.out.println("4. Berat Barang Bukti Terbesar -> Terkecil (Descending)");
+                    System.out.print("Pilihan (1-4): ");
+                    String modeUrut = scanner.nextLine().trim();
+                    switch (modeUrut) {
+                        case "1":
+                            tampilkanDaftar(pengelola.urutkanByVonis(true));
+                            break;
+                        case "2":
+                            tampilkanDaftar(pengelola.urutkanByVonis(false));
+                            break;
+                        case "3":
+                            tampilkanDaftar(pengelola.urutkanByBerat(true));
+                            break;
+                        case "4":
+                            tampilkanDaftar(pengelola.urutkanByBerat(false));
+                            break;
+                        default:
+                            System.out.println("Mode pengurutan tidak valid.");
+                    }
+                    break;
+
+                case "13":
+                    System.out.println("Pilih data yang akan diekspor:");
+                    System.out.println("1. Seluruh Data Putusan (Urutan Asli)");
+                    System.out.println("2. Hasil Urut Vonis Terlama -> Terpendek");
+                    System.out.println("3. Hasil Urut Berat Barang Bukti Terbesar -> Terkecil");
+                    System.out.print("Pilihan (1-3): ");
+                    String sumberPilih = scanner.nextLine().trim();
+
+                    ArrayDinamis<Putusan> dataEkspor;
+                    if ("2".equals(sumberPilih)) {
+                        dataEkspor = pengelola.urutkanByVonis(false);
+                    } else if ("3".equals(sumberPilih)) {
+                        dataEkspor = pengelola.urutkanByBerat(false);
+                    } else {
+                        dataEkspor = pengelola.getSemuaPutusan();
+                    }
+
+                    System.out.print("Path file tujuan (Enter untuk default 'output/hasil-ekspor.csv'): ");
+                    String tujuan = scanner.nextLine().trim();
+                    if (tujuan.isEmpty()) {
+                        tujuan = "output/hasil-ekspor.csv";
+                    }
+
+                    try {
+                        int jumlahEkspor = pengelola.eksporKeCsv(tujuan, dataEkspor);
+                        System.out.println("Berhasil mengekspor " + jumlahEkspor + " baris data ke: " + tujuan);
+                    } catch (IOException e) {
+                        System.out.println("Gagal mengekspor CSV: " + e.getMessage());
                     }
                     break;
 
