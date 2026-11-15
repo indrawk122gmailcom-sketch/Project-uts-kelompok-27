@@ -23,38 +23,36 @@ public class PengelolaPutusan {
         }
     }
 
-    public static class RingkasanAgregasi {
-        public final int totalPerkara;
-        public final int totalVonisBulan;
-        public final double rataRataVonisBulan;
+    public static class RingkasanStatistik {
+        public final int totalKasus;
         public final int vonisMinimumBulan;
         public final int vonisMaksimumBulan;
-        public final long totalDendaRupiah;
-        public final double rataRataDendaRupiah;
+        public final double rataRataVonisBulan;
         public final double totalBeratGram;
         public final double rataRataBeratGram;
-        public final String[] daftarJenisNarkotika;
-        public final int[] jumlahPerJenisNarkotika;
         public final int jumlahJenisUnik;
+        public final String[] daftarJenis;
+        public final int[] jumlahPerJenis;
 
-        public RingkasanAgregasi(int totalPerkara, int totalVonisBulan, double rataRataVonisBulan,
-                                 int vonisMinimumBulan, int vonisMaksimumBulan,
-                                 long totalDendaRupiah, double rataRataDendaRupiah,
-                                 double totalBeratGram, double rataRataBeratGram,
-                                 String[] daftarJenisNarkotika, int[] jumlahPerJenisNarkotika,
-                                 int jumlahJenisUnik) {
-            this.totalPerkara = totalPerkara;
-            this.totalVonisBulan = totalVonisBulan;
-            this.rataRataVonisBulan = rataRataVonisBulan;
+        public RingkasanStatistik(
+                int totalKasus,
+                int vonisMinimumBulan,
+                int vonisMaksimumBulan,
+                double rataRataVonisBulan,
+                double totalBeratGram,
+                double rataRataBeratGram,
+                int jumlahJenisUnik,
+                String[] daftarJenis,
+                int[] jumlahPerJenis) {
+            this.totalKasus = totalKasus;
             this.vonisMinimumBulan = vonisMinimumBulan;
             this.vonisMaksimumBulan = vonisMaksimumBulan;
-            this.totalDendaRupiah = totalDendaRupiah;
-            this.rataRataDendaRupiah = rataRataDendaRupiah;
+            this.rataRataVonisBulan = rataRataVonisBulan;
             this.totalBeratGram = totalBeratGram;
             this.rataRataBeratGram = rataRataBeratGram;
-            this.daftarJenisNarkotika = daftarJenisNarkotika;
-            this.jumlahPerJenisNarkotika = jumlahPerJenisNarkotika;
             this.jumlahJenisUnik = jumlahJenisUnik;
+            this.daftarJenis = daftarJenis;
+            this.jumlahPerJenis = jumlahPerJenis;
         }
     }
 
@@ -310,4 +308,238 @@ public class PengelolaPutusan {
 
         riwayatAudit.push(new StackAudit.EntriAudit(
                 "UBAH_VONIS", sebelum, idx,
-                "Ubah vonis caseId=" + caseId + " dari " + sebelum.getVonisBulan() + " ke " + vonisBaru + " bulan
+                "Ubah vonis caseId=" + caseId + " dari " + sebelum.getVonisBulan() + " ke " + vonisBaru + " bulan"
+        ));
+        return true;
+    }
+
+    public boolean hapusPutusan(String caseId) {
+        int idx = cariIndeksByCaseId(caseId);
+        if (idx == -1) {
+            return false;
+        }
+        Putusan terhapus = daftarPutusan.remove(idx);
+        riwayatAudit.push(new StackAudit.EntriAudit(
+                "HAPUS", terhapus.salin(), idx,
+                "Menghapus putusan caseId=" + caseId + " (" + terhapus.getNomorPerkara() + ")"
+        ));
+        return true;
+    }
+
+    public boolean undo() {
+        if (riwayatAudit.isEmpty()) {
+            return false;
+        }
+        StackAudit.EntriAudit aksiTerakhir = riwayatAudit.pop();
+
+        switch (aksiTerakhir.jenisAksi) {
+            case "TAMBAH":
+                int idxHapus = cariIndeksByCaseId(aksiTerakhir.snapshotSebelum.getCaseId());
+                if (idxHapus != -1) {
+                    daftarPutusan.remove(idxHapus);
+                }
+                return true;
+
+            case "UBAH_VONIS":
+                int idxUbah = cariIndeksByCaseId(aksiTerakhir.snapshotSebelum.getCaseId());
+                if (idxUbah != -1) {
+                    daftarPutusan.get(idxUbah).setVonisBulan(aksiTerakhir.snapshotSebelum.getVonisBulan());
+                }
+                return true;
+
+            case "HAPUS":
+                int posisi = Math.min(aksiTerakhir.indeksAsal, daftarPutusan.size());
+                daftarPutusan.sisipkan(posisi, aksiTerakhir.snapshotSebelum);
+                return true;
+
+            default:
+                return false;
+        }
+    }
+
+    public ArrayDinamis<StackAudit.EntriAudit> getSemuaRiwayatAudit() {
+        ArrayDinamis<StackAudit.EntriAudit> daftarAudit = new ArrayDinamis<>(Math.max(4, riwayatAudit.size()));
+        for (int i = 0; i < riwayatAudit.size(); i++) {
+            daftarAudit.add(riwayatAudit.get(i));
+        }
+        return daftarAudit;
+    }
+
+    public boolean validateInvariants() {
+        return daftarPutusan.validateInvariant() && riwayatAudit.validateInvariant();
+    }
+
+    public int jumlahData() {
+        return daftarPutusan.size();
+    }
+
+    public int jumlahRiwayatAudit() {
+        return riwayatAudit.size();
+    }
+
+    public StackAudit.EntriAudit lihatAuditTerakhir() {
+        return riwayatAudit.peek();
+    }
+
+    public ArrayDinamis<Putusan> getSemuaPutusan() {
+        return daftarPutusan;
+    }
+
+    // =========================================================================
+    // FITUR TAMBAHAN SULTAN: AGREGASI STATISTIK, SORTING MANUAL, & EKSPOR CSV
+    // =========================================================================
+
+    public RingkasanStatistik hitungStatistik() {
+        int n = daftarPutusan.size();
+        if (n == 0) {
+            return new RingkasanStatistik(0, 0, 0, 0.0, 0.0, 0.0, 0, new String[0], new int[0]);
+        }
+
+        int minVonis = Integer.MAX_VALUE;
+        int maxVonis = Integer.MIN_VALUE;
+        long totalVonis = 0L;
+        double totalBerat = 0.0;
+
+        String[] tempJenis = new String[n];
+        int[] tempJumlah = new int[n];
+        int unik = 0;
+
+        for (int i = 0; i < n; i++) {
+            Putusan p = daftarPutusan.get(i);
+            int vonis = p.getVonisBulan();
+            double berat = p.getBeratBarangBuktiGram();
+
+            if (vonis < minVonis) minVonis = vonis;
+            if (vonis > maxVonis) maxVonis = vonis;
+            totalVonis += vonis;
+            totalBerat += berat;
+
+            String jenis = (p.getJenisNarkotika() == null || p.getJenisNarkotika().trim().isEmpty())
+                    ? "Tidak Diketahui"
+                    : p.getJenisNarkotika().trim();
+
+            int indeksJenis = -1;
+            for (int j = 0; j < unik; j++) {
+                if (tempJenis[j].equalsIgnoreCase(jenis)) {
+                    indeksJenis = j;
+                    break;
+                }
+            }
+
+            if (indeksJenis != -1) {
+                tempJumlah[indeksJenis]++;
+            } else {
+                tempJenis[unik] = jenis;
+                tempJumlah[unik] = 1;
+                unik++;
+            }
+        }
+
+        String[] daftarJenis = new String[unik];
+        int[] jumlahPerJenis = new int[unik];
+        for (int i = 0; i < unik; i++) {
+            daftarJenis[i] = tempJenis[i];
+            jumlahPerJenis[i] = tempJumlah[i];
+        }
+
+        double rataVonis = (double) totalVonis / n;
+        double rataBerat = totalBerat / n;
+
+        return new RingkasanStatistik(
+                n, minVonis, maxVonis, rataVonis, totalBerat, rataBerat, unik, daftarJenis, jumlahPerJenis
+        );
+    }
+
+    public ArrayDinamis<Putusan> urutkanByVonis(boolean ascending) {
+        int n = daftarPutusan.size();
+        Putusan[] arr = new Putusan[n];
+        for (int i = 0; i < n; i++) {
+            arr[i] = daftarPutusan.get(i);
+        }
+
+        for (int i = 1; i < n; i++) {
+            Putusan kunci = arr[i];
+            int j = i - 1;
+            while (j >= 0 && (ascending
+                    ? arr[j].getVonisBulan() > kunci.getVonisBulan()
+                    : arr[j].getVonisBulan() < kunci.getVonisBulan())) {
+                arr[j + 1] = arr[j];
+                j--;
+            }
+            arr[j + 1] = kunci;
+        }
+
+        ArrayDinamis<Putusan> hasil = new ArrayDinamis<>(Math.max(4, n));
+        for (int i = 0; i < n; i++) {
+            hasil.add(arr[i]);
+        }
+        return hasil;
+    }
+
+    public ArrayDinamis<Putusan> urutkanByBerat(boolean ascending) {
+        int n = daftarPutusan.size();
+        Putusan[] arr = new Putusan[n];
+        for (int i = 0; i < n; i++) {
+            arr[i] = daftarPutusan.get(i);
+        }
+
+        for (int i = 1; i < n; i++) {
+            Putusan kunci = arr[i];
+            int j = i - 1;
+            while (j >= 0 && (ascending
+                    ? Double.compare(arr[j].getBeratBarangBuktiGram(), kunci.getBeratBarangBuktiGram()) > 0
+                    : Double.compare(arr[j].getBeratBarangBuktiGram(), kunci.getBeratBarangBuktiGram()) < 0)) {
+                arr[j + 1] = arr[j];
+                j--;
+            }
+            arr[j + 1] = kunci;
+        }
+
+        ArrayDinamis<Putusan> hasil = new ArrayDinamis<>(Math.max(4, n));
+        for (int i = 0; i < n; i++) {
+            hasil.add(arr[i]);
+        }
+        return hasil;
+    }
+
+    public int eksporKeCsv(String pathFile, ArrayDinamis<Putusan> sumberData) throws IOException {
+        ArrayDinamis<Putusan> data = (sumberData != null) ? sumberData : daftarPutusan;
+        File targetFile = new File(pathFile);
+        File parent = targetFile.getParentFile();
+        if (parent != null && !parent.exists()) {
+            parent.mkdirs();
+        }
+
+        int ditulis = 0;
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(targetFile))) {
+            writer.write("case_id,nomor_perkara,jenis_narkotika,berat_barang_bukti_gram,pasal_terbukti,tuntutan_bulan,vonis_bulan,denda_rupiah");
+            writer.newLine();
+
+            for (int i = 0; i < data.size(); i++) {
+                Putusan p = data.get(i);
+                String baris = escapeCsv(p.getCaseId()) + ","
+                        + escapeCsv(p.getNomorPerkara()) + ","
+                        + escapeCsv(p.getJenisNarkotika()) + ","
+                        + p.getBeratBarangBuktiGram() + ","
+                        + escapeCsv(p.getPasalTerbukti()) + ","
+                        + p.getTuntutanBulan() + ","
+                        + p.getVonisBulan() + ","
+                        + p.getDendaRupiah();
+                writer.write(baris);
+                writer.newLine();
+                ditulis++;
+            }
+        }
+        return ditulis;
+    }
+
+    private String escapeCsv(String nilai) {
+        if (nilai == null) {
+            return "";
+        }
+        if (nilai.contains(",") || nilai.contains("\"") || nilai.contains("\n")) {
+            return "\"" + nilai.replace("\"", "\"\"") + "\"";
+        }
+        return nilai;
+    }
+}
