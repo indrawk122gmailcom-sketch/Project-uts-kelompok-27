@@ -1,24 +1,28 @@
 # Pembagian Kontribusi Anggota Kelompok 27
 
-Proyek: **Sistem Manajemen Putusan Narkotika (Java CLI & Struktur Data Manual)**
+Repositori: `https://github.com/indrawk122gmailcom-sketch/Project-uts-kelompok-27`
 
 ---
 
-## 1. Indra (`indrawk122gmailcom-sketch`)
-- **Kurasi Dataset & Provenance (`feat/dataset-part1` — PR #1):**
-  - Menyusun dan memvalidasi 25 data awal putusan narkotika (`P001`–`P025`) ke dalam `data/putusan-50.csv` sesuai skema 17 kolom.
-  - Mendokumentasikan sumber halaman putusan dan asal dokumen pada `docs/data-provenance.csv`.
-- **Implementasi Struktur Data Manual, Aplikasi CLI, & Pengujian (`feat/app-enhancement-and-tests` — PR #2):**
-  - Mengimplementasikan model entitas `Putusan.java` lengkap dengan mekanisme *deep copy*.
-  - Membangun struktur data manual `ArrayDinamis.java` (ekspansi otomatis `2x`) dan `StackAudit.java` (*linked list stack* untuk fitur *Undo*).
-  - Mengimplementasikan `CsvParser.java` untuk menangani parsing 17 kolom CSV dengan tanda kutip dan koma internal.
-  - Menyusun logika validasi, pencarian, filter, dan antarmuka menu CLI pada `PengelolaPutusan.java` dan `Main.java`.
-  - Membangun suite pengujian otomatis 7 skenario wajib pada `MainTest.java` (`7/7 PASS`).
-- **Dokumentasi Arsitektur & Penelusuran (`docs/readme-and-adr` — PR #3):**
-  - Menyusun dokumentasi utama pada `README.md`, catatan keputusan teknis pada `docs/adr/001-struktur-data-manual.md`, penelusuran struktur data pada `docs/trace/trace-operasi-utama.md`, serta laporan kontribusi dan penggunaan AI.
+## 1. Indra Wahyudin Kurniawan (`indrawk122gmailcom-sketch`)
+- **Ekstraksi Dataset & Provenance Bagian 1 (`caseId` 1–25):**
+  - Mengekstrak 25 putusan pertama dari Direktori Putusan Mahkamah Agung ke `data/putusan-50.csv` serta mencatat sumber halaman per atribut di `docs/data-provenance.csv`.
+  - **Pull Request:** `#1` (`feat/dataset-part1` -> `main`)
+- **Implementasi Struktur Data Manual, CLI, & Pengujian:**
+  - Mengimplementasikan `Putusan.java`, `ArrayDinamis.java`, `StackAudit.java`, `CsvParser.java`, `PengelolaPutusan.java`, `Main.java`, serta 7 skenario pengujian di `MainTest.java`.
+  - **Pull Request:** `#2` (`feat/app-enhancement-and-tests` -> `main`) — *Merged*
+  - **Commit Utama:** `6db4094`
+- **Dokumentasi Arsitektur, Trace Manual, & Transparansi AI:**
+  - Menyusun `README.md`, `docs/adr/001-struktur-data-manual.md`, `docs/adr/002-strategi-pencarian-dan-pengurutan.md`, `docs/trace/trace-operasi-utama.md`, `CONTRIBUTIONS.md`, dan `AI_USAGE.md`.
+  - **Pull Request:** `#4` (`docs/readme-and-adr` -> `main`)
+- **Code Review:**
+  - Melakukan *review* teknis terhadap PR `#5` (`feat/dataset-part2`) milik Rizky Sultan.
+
+---
 
 ## 2. Rizky Sultan (`rizkysultan017-cell`)
-- **Kurasi Dataset Lanjutan & Provenance:**
-  - Melengkapi 25 data putusan berikutnya (`P026`–`P050`) pada `data/putusan-50.csv` beserta pencatatan `docs/data-provenance.csv`.
-- **Code Review & Verifikasi Integrasi:**
-  - Melakukan *review* silang terhadap Pull Request dataset, struktur data manual, pengujian, dan dokumentasi sebelum penggabungan ke branch `main`.
+- **Ekstraksi Dataset & Provenance Bagian 2 (`caseId` 26–50):**
+  - Melengkapi 25 putusan berikutnya (baris ke-27 s.d. ke-51) pada `data/putusan-50.csv` serta mencatat sumber halaman per atribut di `docs/data-provenance.csv`.
+  - **Pull Request:** `#5` (`feat/dataset-part2` -> `main`)
+- **Code Review & Integrasi Cabang:**
+  - Melakukan *review* dan *merge* terhadap PR `#2` (`feat/app-enhancement-and-tests` -> `main`), serta mereview PR `#1` dan PR `#4`.
