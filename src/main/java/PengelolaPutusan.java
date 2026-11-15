@@ -385,10 +385,6 @@ public class PengelolaPutusan {
         return daftarPutusan;
     }
 
-    // =========================================================================
-    // FITUR TAMBAHAN SULTAN: AGREGASI STATISTIK, SORTING MANUAL, & EKSPOR CSV
-    // =========================================================================
-
     public RingkasanStatistik hitungStatistik() {
         int n = daftarPutusan.size();
         if (n == 0) {
