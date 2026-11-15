@@ -1,39 +1,24 @@
-# Catatan Kontribusi Anggota Kelompok
+# Pembagian Kontribusi Anggota Kelompok 27
 
-**Kelompok:** 27  
-**Mata Kuliah:** Struktur Data
-
----
-
-## Anggota Kelompok
-
-1. **Nama Indra wahyudin** (NIM: 202510370110242) — GitHub: [@username1](https://github.com/username1)
-2. **Nama Sultan Rizky** (NIM: 202510370110247) — GitHub: [@username2](https://github.com/username2)
+Proyek: **Sistem Manajemen Putusan Narkotika (Java CLI & Struktur Data Manual)**
 
 ---
 
-## Ringkasan Kontribusi Individual
+## 1. Indra (`indrawk122gmailcom-sketch`)
+- **Kurasi Dataset & Provenance (`feat/dataset-part1` — PR #1):**
+  - Menyusun dan memvalidasi 25 data awal putusan narkotika (`P001`–`P025`) ke dalam `data/putusan-50.csv` sesuai skema 17 kolom.
+  - Mendokumentasikan sumber halaman putusan dan asal dokumen pada `docs/data-provenance.csv`.
+- **Implementasi Struktur Data Manual, Aplikasi CLI, & Pengujian (`feat/app-enhancement-and-tests` — PR #2):**
+  - Mengimplementasikan model entitas `Putusan.java` lengkap dengan mekanisme *deep copy*.
+  - Membangun struktur data manual `ArrayDinamis.java` (ekspansi otomatis `2x`) dan `StackAudit.java` (*linked list stack* untuk fitur *Undo*).
+  - Mengimplementasikan `CsvParser.java` untuk menangani parsing 17 kolom CSV dengan tanda kutip dan koma internal.
+  - Menyusun logika validasi, pencarian, filter, dan antarmuka menu CLI pada `PengelolaPutusan.java` dan `Main.java`.
+  - Membangun suite pengujian otomatis 7 skenario wajib pada `MainTest.java` (`7/7 PASS`).
+- **Dokumentasi Arsitektur & Penelusuran (`docs/readme-and-adr` — PR #3):**
+  - Menyusun dokumentasi utama pada `README.md`, catatan keputusan teknis pada `docs/adr/001-struktur-data-manual.md`, penelusuran struktur data pada `docs/trace/trace-operasi-utama.md`, serta laporan kontribusi dan penggunaan AI.
 
-### 1. Nama Anggota 1
-* **Ekstraksi Data & Provenance:**
-    * Mengumpulkan dan memverifikasi data putusan 1–25.
-    * [Link Commit / PR Provenance](#)
-* **Implementasi Kode:**
-    * Membuat struktur data utama (misal: Array Dinamis / Linked List).
-    * [Issue #1](#) | [PR #1](#)
-* **Pengujian (Testing):**
-    * Membuka dan menyelesaikan pengujian unit test.
-    * [PR Review #1](#)
-
----
-
-### 2. Nama Anggota 2
-* **Ekstraksi Data & Provenance:**
-    * Mengumpulkan dan memverifikasi data putusan 26–50.
-    * [Link Commit / PR Provenance](#)
-* **Implementasi Kode:**
-    * Membuat struktur data sekunder dan fitur filter/pencarian.
-    * [Issue #2](#) | [PR #2](#)
-* **Pengujian & Dokumentasi:**
-    * Membuat dokumentasi README dan pengujian audit log.
-    * [PR Review #2](#)
+## 2. Rizky Sultan (`rizkysultan017-cell`)
+- **Kurasi Dataset Lanjutan & Provenance:**
+  - Melengkapi 25 data putusan berikutnya (`P026`–`P050`) pada `data/putusan-50.csv` beserta pencatatan `docs/data-provenance.csv`.
+- **Code Review & Verifikasi Integrasi:**
+  - Melakukan *review* silang terhadap Pull Request dataset, struktur data manual, pengujian, dan dokumentasi sebelum penggabungan ke branch `main`.
