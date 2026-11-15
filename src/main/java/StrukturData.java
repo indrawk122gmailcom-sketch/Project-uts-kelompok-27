@@ -4,5 +4,7 @@ public interface StrukturData<T> {
     T remove(int index);
     int size();
     boolean isEmpty();
+    boolean contains(T element);
+    void clear();
     boolean validateInvariant();
 }

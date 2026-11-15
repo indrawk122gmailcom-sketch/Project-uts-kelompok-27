@@ -3,6 +3,23 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class PengelolaPutusan {
+
+    public static class HasilPencarian {
+        public final Putusan putusan;
+        public final int indeks;
+        public final int jumlahLangkah;
+
+        public HasilPencarian(Putusan putusan, int indeks, int jumlahLangkah) {
+            this.putusan = putusan;
+            this.indeks = indeks;
+            this.jumlahLangkah = jumlahLangkah;
+        }
+
+        public boolean ditemukan() {
+            return putusan != null;
+        }
+    }
+
     private final ArrayDinamis<Putusan> daftarPutusan;
     private final StackAudit<StackAudit.EntriAudit> riwayatAudit;
 
@@ -13,11 +30,13 @@ public class PengelolaPutusan {
 
     public int muatDariCsv(String pathFile) throws IOException {
         int berhasilDimuat = 0;
+        int nomorBaris = 0;
         try (BufferedReader reader = new BufferedReader(new FileReader(pathFile))) {
             String baris;
             boolean barisHeader = true;
 
             while ((baris = reader.readLine()) != null) {
+                nomorBaris++;
                 if (baris.trim().isEmpty()) {
                     continue;
                 }
@@ -27,26 +46,64 @@ public class PengelolaPutusan {
                 }
 
                 String[] k = CsvParser.parseBaris(baris);
-                if (k.length < 17) {
+                if (k.length < 16) {
+                    System.err.println("[CSV SKIP] Baris " + nomorBaris + " hanya memiliki " + k.length + " kolom.");
                     continue;
                 }
 
-                Putusan p = new Putusan(
-                        k[0], k[1], k[2], k[3], k[4], k[5],
-                        Double.parseDouble(k[6]),
-                        k[7], k[8],
-                        Integer.parseInt(k[9]),
-                        Integer.parseInt(k[10]),
-                        Long.parseLong(k[11]),
-                        k[12], k[13], k[14], k[15], k[16]
-                );
+                String provenance = (k.length >= 17 && !k[16].trim().isEmpty())
+                        ? k[16]
+                        : "Direktori Putusan Mahkamah Agung RI";
 
-                if (tambahPutusanTanpaAudit(p)) {
-                    berhasilDimuat++;
+                try {
+                    Putusan p = new Putusan(
+                            k[0], k[1], k[2], k[3], k[4], k[5],
+                            parseDoubleAman(k[6]),
+                            k[7], k[8],
+                            parseIntAman(k[9]),
+                            parseIntAman(k[10]),
+                            parseLongAman(k[11]),
+                            k[12], k[13], k[14], k[15], provenance
+                    );
+
+                    if (tambahPutusanTanpaAudit(p)) {
+                        berhasilDimuat++;
+                    } else {
+                        System.err.println("[CSV SKIP] Baris " + nomorBaris + " (caseId=" + k[0] + ") ditolak validasi/duplikat.");
+                    }
+                } catch (NumberFormatException e) {
+                    System.err.println("[CSV SKIP] Baris " + nomorBaris + " (caseId=" + k[0] + ") format angka tidak valid: " + e.getMessage());
                 }
             }
         }
         return berhasilDimuat;
+    }
+
+    private double parseDoubleAman(String teks) {
+        if (teks == null) return 0.0;
+        String bersih = teks.trim().replace(",", ".");
+        if (bersih.isEmpty() || bersih.equalsIgnoreCase("null") || bersih.equals("-")) {
+            return 0.0;
+        }
+        return Double.parseDouble(bersih);
+    }
+
+    private int parseIntAman(String teks) {
+        if (teks == null) return 0;
+        String bersih = teks.trim();
+        if (bersih.isEmpty() || bersih.equalsIgnoreCase("null") || bersih.equals("-")) {
+            return 0;
+        }
+        return Integer.parseInt(bersih);
+    }
+
+    private long parseLongAman(String teks) {
+        if (teks == null) return 0L;
+        String bersih = teks.trim();
+        if (bersih.isEmpty() || bersih.equalsIgnoreCase("null") || bersih.equals("-")) {
+            return 0L;
+        }
+        return Long.parseLong(bersih);
     }
 
     private int cariIndeksByCaseId(String caseId) {
@@ -105,6 +162,23 @@ public class PengelolaPutusan {
         return (idx == -1) ? null : daftarPutusan.get(idx);
     }
 
+    public HasilPencarian cariDenganLangkah(String kataKunci) {
+        if (kataKunci == null || kataKunci.trim().isEmpty()) {
+            return new HasilPencarian(null, -1, 0);
+        }
+        String target = kataKunci.trim();
+        int langkah = 0;
+
+        for (int i = 0; i < daftarPutusan.size(); i++) {
+            langkah++;
+            Putusan p = daftarPutusan.get(i);
+            if (p.getCaseId().equalsIgnoreCase(target) || p.getNomorPerkara().equalsIgnoreCase(target)) {
+                return new HasilPencarian(p, i, langkah);
+            }
+        }
+        return new HasilPencarian(null, -1, langkah);
+    }
+
     public ArrayDinamis<Putusan> filterRentangVonis(int minBulan, int maxBulan) {
         ArrayDinamis<Putusan> hasil = new ArrayDinamis<>(10);
         for (int i = 0; i < daftarPutusan.size(); i++) {
@@ -131,17 +205,53 @@ public class PengelolaPutusan {
         return hasil;
     }
 
+    public ArrayDinamis<Putusan> filterRentangBerat(double minBeratGram, double maxBeratGram) {
+        ArrayDinamis<Putusan> hasil = new ArrayDinamis<>(10);
+        for (int i = 0; i < daftarPutusan.size(); i++) {
+            Putusan p = daftarPutusan.get(i);
+            double berat = p.getBeratBarangBuktiGram();
+            if (berat >= minBeratGram && berat <= maxBeratGram) {
+                hasil.add(p);
+            }
+        }
+        return hasil;
+    }
+
+    public ArrayDinamis<Putusan> filterPasalTerbukti(String kataKunciPasal) {
+        ArrayDinamis<Putusan> hasil = new ArrayDinamis<>(10);
+        if (kataKunciPasal == null || kataKunciPasal.trim().isEmpty()) {
+            return hasil;
+        }
+        String kunci = kataKunciPasal.trim().toLowerCase();
+        for (int i = 0; i < daftarPutusan.size(); i++) {
+            Putusan p = daftarPutusan.get(i);
+            if (p.getPasalTerbukti() != null && p.getPasalTerbukti().toLowerCase().contains(kunci)) {
+                hasil.add(p);
+            }
+        }
+        return hasil;
+    }
+
     public ArrayDinamis<Putusan> filterMultiKriteria(String jenisNarkotika, int minVonisBulan, int maxVonisBulan, double minBeratGram) {
+        return filterLengkap(jenisNarkotika, "", minVonisBulan, maxVonisBulan, minBeratGram, Double.MAX_VALUE);
+    }
+
+    public ArrayDinamis<Putusan> filterLengkap(
+            String jenisNarkotika, String pasalTerbukti,
+            int minVonisBulan, int maxVonisBulan,
+            double minBeratGram, double maxBeratGram) {
         ArrayDinamis<Putusan> hasil = new ArrayDinamis<>(10);
         String kunciJenis = (jenisNarkotika == null) ? "" : jenisNarkotika.trim().toLowerCase();
+        String kunciPasal = (pasalTerbukti == null) ? "" : pasalTerbukti.trim().toLowerCase();
 
         for (int i = 0; i < daftarPutusan.size(); i++) {
             Putusan p = daftarPutusan.get(i);
             boolean cocokJenis = kunciJenis.isEmpty() || p.getJenisNarkotika().toLowerCase().contains(kunciJenis);
+            boolean cocokPasal = kunciPasal.isEmpty() || (p.getPasalTerbukti() != null && p.getPasalTerbukti().toLowerCase().contains(kunciPasal));
             boolean cocokVonis = p.getVonisBulan() >= minVonisBulan && p.getVonisBulan() <= maxVonisBulan;
-            boolean cocokBerat = p.getBeratBarangBuktiGram() >= minBeratGram;
+            boolean cocokBerat = p.getBeratBarangBuktiGram() >= minBeratGram && p.getBeratBarangBuktiGram() <= maxBeratGram;
 
-            if (cocokJenis && cocokVonis && cocokBerat) {
+            if (cocokJenis && cocokPasal && cocokVonis && cocokBerat) {
                 hasil.add(p);
             }
         }
@@ -209,6 +319,14 @@ public class PengelolaPutusan {
             default:
                 return false;
         }
+    }
+
+    public ArrayDinamis<StackAudit.EntriAudit> getSemuaRiwayatAudit() {
+        ArrayDinamis<StackAudit.EntriAudit> daftarAudit = new ArrayDinamis<>(Math.max(4, riwayatAudit.size()));
+        for (int i = 0; i < riwayatAudit.size(); i++) {
+            daftarAudit.add(riwayatAudit.get(i));
+        }
+        return daftarAudit;
     }
 
     public boolean validateInvariants() {
