@@ -1,0 +1,226 @@
+case_id,field_name,value,source_file,source_page,extractor,reviewer,status
+P001,nomorPerkara,1619/Pid.Sus/2024/PN Tng,putusan_narkoba_1_2.pdf,1,Indra,Sultan,verified
+P001,pengadilan,Pengadilan Negeri Tangerang,putusan_narkoba_1_2.pdf,1,Indra,Sultan,verified
+P001,tanggalPutusan,2024-12-09,putusan_narkoba_1_2.pdf,26,Indra,Sultan,verified
+P001,jenisNarkotika,Metamfetamina,putusan_narkoba_1_2.pdf,5,Indra,Sultan,verified
+P001,beratBarangBuktiGram,0.5201,putusan_narkoba_1_2.pdf,5,Indra,Sultan,verified
+P001,pasalTerbukti,Pasal 114 ayat (1) UU RI No. 35 Tahun 2009,putusan_narkoba_1_2.pdf,25,Indra,Sultan,verified
+P001,tuntutanBulan,72,putusan_narkoba_1_2.pdf,2,Indra,Sultan,verified
+P001,vonisBulan,72,putusan_narkoba_1_2.pdf,25,Indra,Sultan,verified
+P001,dendaRupiah,4000000000,putusan_narkoba_1_2.pdf,25,Indra,Sultan,verified
+p002,nomorPerkara,1556/Pid.Sus/2024/PN Tng,putusan_narkoba_2.pdf,1,Indra,Sultan,verified
+p002,pengadilan,Pengadilan Negeri Tangerang,putusan_narkoba_2.pdf,1,Indra,Sultan,verified
+p002,tanggalPutusan,2024-12-12,putusan_narkoba_2.pdf,19,Indra,Sultan,verified
+p002,jenisNarkotika,Metamfetamina (Sabu),putusan_narkoba_2.pdf,5,Indra,Sultan,verified
+p002,beratBarangBuktiGram,3.54,putusan_narkoba_2.pdf,2,Indra,Sultan,verified
+p002,pasalTerbukti,Pasal 112 ayat (1) UU RI No. 35 Tahun 2009,putusan_narkoba_2.pdf,18,Indra,Sultan,verified
+p002,tuntutanBulan,96,putusan_narkoba_2.pdf,2,Indra,Sultan,verified
+p002,vonisBulan,84,putusan_narkoba_2.pdf,18,Indra,Sultan,verified
+p002,dendaRupiah,1000000000,putusan_narkoba_2.pdf,18,Indra,Sultan,verified
+p003,nomorPerkara,1541/Pid.Sus/2024/PN Tng,putusan_narkoba_3_2.pdf,1,Indra,Sultan,verified
+p003,pengadilan,Pengadilan Negeri Tangerang,putusan_narkoba_3_2.pdf,1,Indra,Sultan,verified
+p003,tanggalPutusan,2025-01-14,putusan_narkoba_3_2.pdf,38,Indra,Sultan,verified
+p003,jenisNarkotika,Metamfetamina (Sabu),putusan_narkoba_3_2.pdf,8,Indra,Sultan,verified
+p003,beratBarangBuktiGram,458.10,putusan_narkoba_3_2.pdf,2,Indra,Sultan,verified
+p003,pasalTerbukti,Pasal 114 ayat (2) UU RI No. 35 Tahun 2009,putusan_narkoba_3_2.pdf,37,Indra,Sultan,verified
+p003,tuntutanBulan,204,putusan_narkoba_3_2.pdf,2,Indra,Sultan,verified
+p003,vonisBulan,180,putusan_narkoba_3_2.pdf,37,Indra,Sultan,verified
+p003,dendaRupiah,2000000000,putusan_narkoba_3_2.pdf,37,Indra,Sultan,verified
+p004,nomorPerkara,1518/Pid.Sus/2024/PN Tng,putusan_narkoba_4_2.pdf,1,Indra,Sultan,verified
+p004,pengadilan,Pengadilan Negeri Tangerang,putusan_narkoba_4_2.pdf,1,Indra,Sultan,verified
+p004,tanggalPutusan,2024-12-09,putusan_narkoba_4_2.pdf,17,Indra,Sultan,verified
+p004,jenisNarkotika,Metamfetamina (Shabu),putusan_narkoba_4_2.pdf,5,Indra,Sultan,verified
+p004,beratBarangBuktiGram,4.9529,putusan_narkoba_4_2.pdf,2,Indra,Sultan,verified
+p004,pasalTerbukti,Pasal 114 ayat (1) UU RI No. 35 Tahun 2009,putusan_narkoba_4_2.pdf,16,Indra,Sultan,verified
+p004,tuntutanBulan,84,putusan_narkoba_4_2.pdf,2,Indra,Sultan,verified
+p004,vonisBulan,84,putusan_narkoba_4_2.pdf,16,Indra,Sultan,verified
+p004,dendaRupiah,3000000000,putusan_narkoba_4_2.pdf,16,Indra,Sultan,verified
+P005,nomorPerkara,805/Pid.Sus/2026/PN Tng,putusan_narkoba_05.pdf,1,Indra,Sultan,verified
+P005,pengadilan,Pengadilan Negeri Tangerang,putusan_narkoba_05.pdf,1,Indra,Sultan,verified
+P005,tanggalPutusan,2026-07-23,putusan_narkoba_05.pdf,17,Indra,Sultan,verified
+P005,jenisNarkotika,Metamfetamina (Sabu),putusan_narkoba_05.pdf,5,Indra,Sultan,verified
+P005,beratBarangBuktiGram,5.0934,putusan_narkoba_05.pdf,5,Indra,Sultan,verified
+P005,pasalTerbukti,Pasal 114 ayat (2) UU RI No. 35 Tahun 2009 jo. Lampiran II UU No. 1 Tahun 2026,putusan_narkoba_05.pdf,16,Indra,Sultan,verified
+P005,tuntutanBulan,156,putusan_narkoba_05.pdf,2,Indra,Sultan,verified
+P005,vonisBulan,120,putusan_narkoba_05.pdf,16,Indra,Sultan,verified
+P005,dendaRupiah,1000000000,putusan_narkoba_05.pdf,16,Indra,Sultan,verified
+p006,nomorPerkara,1452/Pid.B/2024/PN Tng,putusan_narkoba_6_2.pdf,1,Indra,Sultan,verified
+p006,pengadilan,Pengadilan Negeri Tangerang,putusan_narkoba_6_2.pdf,1,Indra,Sultan,verified
+p006,tanggalPutusan,2024-10-28,putusan_narkoba_6_2.pdf,26,Indra,Sultan,verified
+p006,jenisNarkotika,Metamfetamina (Sabu) & MDMA (Ekstasi),putusan_narkoba_6_2.pdf,7,Indra,Sultan,verified
+p006,beratBarangBuktiGram,518.76,putusan_narkoba_6_2.pdf,7,Indra,Sultan,verified
+p006,pasalTerbukti,Pasal 114 ayat (2) UU RI No. 35 Tahun 2009,putusan_narkoba_6_2.pdf,25,Indra,Sultan,verified
+p006,tuntutanBulan,120,putusan_narkoba_6_2.pdf,2,Indra,Sultan,verified
+p006,vonisBulan,120,putusan_narkoba_6_2.pdf,25,Indra,Sultan,verified
+p006,dendaRupiah,2000000000,putusan_narkoba_6_2.pdf,25,Indra,Sultan,verified
+p007,nomorPerkara,1154/Pid.Sus/2026/PN.Tng,putusan_narkoba_07.pdf,1,Indra,Sultan,verified
+p007,pengadilan,Pengadilan Negeri Tangerang,putusan_narkoba_07.pdf,1,Indra,Sultan,verified
+p007,tanggalPutusan,2026-09-08,putusan_narkoba_07.pdf,17,Indra,Sultan,verified
+p007,jenisNarkotika,Metamfetamina (Shabu),putusan_narkoba_07.pdf,4,Indra,Sultan,verified
+p007,beratBarangBuktiGram,6.4666,putusan_narkoba_07.pdf,4,Indra,Sultan,verified
+p007,pasalTerbukti,Pasal 114 ayat (2) Undang-Undang Republik Indonesia Nomor 35 Tahun 2009 tentang Narkotika,putusan_narkoba_07.pdf,11,Indra,Sultan,verified
+p007,tuntutanBulan,72,putusan_narkoba_07.pdf,2,Indra,Sultan,verified
+p007,vonisBulan,66,putusan_narkoba_07.pdf,16,Indra,Sultan,verified
+p007,dendaRupiah,2000000000,putusan_narkoba_07.pdf,16,Indra,Sultan,verified
+p008,nomorPerkara,664/Pid.Sus/2025/PN Tng,putusan_narkoba_8_2.pdf,1,Indra,Sultan,verified
+p008,pengadilan,Pengadilan Negeri Tangerang,putusan_narkoba_8_2.pdf,1,Indra,Sultan,verified
+p008,tanggalPutusan,2025-07-02,putusan_narkoba_8_2.pdf,25,Indra,Sultan,verified
+p008,jenisNarkotika,Metamfetamina (Shabu),putusan_narkoba_8_2.pdf,4,Indra,Sultan,verified
+p008,beratBarangBuktiGram,0.6473,putusan_narkoba_8_2.pdf,2,Indra,Sultan,verified
+p008,pasalTerbukti,Pasal 114 ayat (1) UU RI No. 35 Tahun 2009,putusan_narkoba_8_2.pdf,24,Indra,Sultan,verified
+p008,tuntutanBulan,84,putusan_narkoba_8_2.pdf,2,Indra,Sultan,verified
+p008,vonisBulan,78,putusan_narkoba_8_2.pdf,24,Indra,Sultan,verified
+p008,dendaRupiah,1000000000,putusan_narkoba_8_2.pdf,24,Indra,Sultan,verified
+p009,nomorPerkara,783/Pid.Sus/2025/PN Tng,putusan_narkoba_9_2.pdf,1,Indra,Sultan,verified
+p009,pengadilan,Pengadilan Negeri Tangerang,putusan_narkoba_9_2.pdf,1,Indra,Sultan,verified
+p009,tanggalPutusan,2025-07-21,putusan_narkoba_9_2.pdf,30,Indra,Sultan,verified
+p009,jenisNarkotika,Metamfetamina (Sabu),putusan_narkoba_9_2.pdf,6,Indra,Sultan,verified
+p009,beratBarangBuktiGram,2.14,putusan_narkoba_9_2.pdf,2,Indra,Sultan,verified
+p009,pasalTerbukti,Pasal 114 ayat (1) UU RI No. 35 Tahun 2009,putusan_narkoba_9_2.pdf,29,Indra,Sultan,verified
+p009,tuntutanBulan,90,putusan_narkoba_9_2.pdf,2,Indra,Sultan,verified
+p009,vonisBulan,84,putusan_narkoba_9_2.pdf,29,Indra,Sultan,verified
+p009,dendaRupiah,1000000000,putusan_narkoba_9_2.pdf,29,Indra,Sultan,verified
+p010,nomorPerkara,813/Pid.Sus/2024/PN Tng,putusan_narkoba_10_2.pdf,1,Indra,Sultan,verified
+p010,pengadilan,Pengadilan Negeri Tangerang,putusan_narkoba_10_2.pdf,1,Indra,Sultan,verified
+p010,tanggalPutusan,2024-07-01,putusan_narkoba_10_2.pdf,21,Indra,Sultan,verified
+p010,jenisNarkotika,Tembakau Sintetis (MDMB-4en PINACA & MDMB INACA),putusan_narkoba_10_2.pdf,5,Indra,Sultan,verified
+p010,beratBarangBuktiGram,9.60,putusan_narkoba_10_2.pdf,2,Indra,Sultan,verified
+p010,pasalTerbukti,Pasal 114 ayat (1) UU RI No. 35 Tahun 2009,putusan_narkoba_10_2.pdf,21,Indra,Sultan,verified
+p010,tuntutanBulan,96,putusan_narkoba_10_2.pdf,2,Indra,Sultan,verified
+p010,vonisBulan,72,putusan_narkoba_10_2.pdf,21,Indra,Sultan,verified
+p010,dendaRupiah,1000000000,putusan_narkoba_10_2.pdf,21,Indra,Sultan,verified
+p011,nomorPerkara,831/Pid.Sus/2025/PN.Tng,putusan_narkoba_11_2.pdf,1,Indra,Sultan,verified
+p011,pengadilan,Pengadilan Negeri Tangerang,putusan_narkoba_11_2.pdf,1,Indra,Sultan,verified
+p011,tanggalPutusan,2025-07-14,putusan_narkoba_11_2.pdf,21,Indra,Sultan,verified
+p011,jenisNarkotika,Metamfetamina (Sabu),putusan_narkoba_11_2.pdf,5,Indra,Sultan,verified
+p011,beratBarangBuktiGram,2.81,putusan_narkoba_11_2.pdf,2,Indra,Sultan,verified
+p011,pasalTerbukti,Pasal 114 ayat (1) UU RI No. 35 Tahun 2009,putusan_narkoba_11_2.pdf,20,Indra,Sultan,verified
+p011,tuntutanBulan,90,putusan_narkoba_11_2.pdf,2,Indra,Sultan,verified
+p011,vonisBulan,78,putusan_narkoba_11_2.pdf,20,Indra,Sultan,verified
+p011,dendaRupiah,1000000000,putusan_narkoba_11_2.pdf,20,Indra,Sultan,verified
+p012,nomorPerkara,853/Pid.Sus/2025/PN.Tng,putusan_narkoba_12_7.pdf,1,Indra,Sultan,verified
+p012,pengadilan,Pengadilan Negeri Tangerang,putusan_narkoba_12_7.pdf,1,Indra,Sultan,verified
+p012,tanggalPutusan,2025-07-24,putusan_narkoba_12_7.pdf,32,Indra,Sultan,verified
+p012,jenisNarkotika,Tanaman Ganja,putusan_narkoba_12_7.pdf,5,Indra,Sultan,verified
+p012,beratBarangBuktiGram,7.6322,putusan_narkoba_12_7.pdf,2,Indra,Sultan,verified
+p012,pasalTerbukti,Pasal 114 ayat (1) UU RI No. 35 Tahun 2009 jo. Pasal 64 ayat (1) KUHP,putusan_narkoba_12_7.pdf,31,Indra,Sultan,verified
+p012,tuntutanBulan,90,putusan_narkoba_12_7.pdf,2,Indra,Sultan,verified
+p012,vonisBulan,69,putusan_narkoba_12_7.pdf,31,Indra,Sultan,verified
+p012,dendaRupiah,1000000000,putusan_narkoba_12_7.pdf,31,Indra,Sultan,verified
+P013,nomorPerkara,811/Pid.Sus/2026/PN.Tng,putusan_narkoba_13_3.pdf,1,Indra,Sultan,verified
+P013,pengadilan,Pengadilan Negeri Tangerang,putusan_narkoba_13_3.pdf,1,Indra,Sultan,verified
+P013,tanggalPutusan,2026-07-22,putusan_narkoba_13_3.pdf,26,Indra,Sultan,verified
+P013,jenisNarkotika,Metamfetamina,putusan_narkoba_13_3.pdf,5,Indra,Sultan,verified
+P013,beratBarangBuktiGram,4.6490,putusan_narkoba_13_3.pdf,5,Indra,Sultan,verified
+P013,pasalTerbukti,Pasal 114 ayat (1) UU RI No. 35 Tahun 2009 jo. Lampiran II UU RI No. 1 Tahun 2026,putusan_narkoba_13_3.pdf,25,Indra,Sultan,verified
+P013,tuntutanBulan,72,putusan_narkoba_13_3.pdf,2,Indra,Sultan,verified
+P013,vonisBulan,60,putusan_narkoba_13_3.pdf,25,Indra,Sultan,verified
+P013,dendaRupiah,1000000000,putusan_narkoba_13_3.pdf,25,Indra,Sultan,verified
+p014,nomorPerkara,1158/Pid.Sus/2026/PN Tng,putusan_narkoba_14.pdf,1,Indra,Sultan,verified
+p014,pengadilan,Pengadilan Negeri Tangerang,putusan_narkoba_14.pdf,1,Indra,Sultan,verified
+p014,tanggalPutusan,2026-09-08,putusan_narkoba_14.pdf,31,Indra,Sultan,verified
+p014,jenisNarkotika,Metamfetamina (Shabu),putusan_narkoba_14.pdf,3,Indra,Sultan,verified
+p014,beratBarangBuktiGram,5986.8,putusan_narkoba_14.pdf,3,Indra,Sultan,verified
+p014,pasalTerbukti,Pasal 114 ayat (2) Undang-Undang Republik Indonesia Nomor 35 Tahun 2009 tentang Narkotika jo. Pasal 132 ayat (1),putusan_narkoba_14.pdf,30,Indra,Sultan,verified
+p014,tuntutanBulan,168,putusan_narkoba_14.pdf,2,Indra,Sultan,verified
+p014,vonisBulan,114,putusan_narkoba_14.pdf,30,Indra,Sultan,verified
+p014,dendaRupiah,500000000,putusan_narkoba_14.pdf,30,Indra,Sultan,verified
+p015,nomorPerkara,1214/Pid.Sus/2026/PN Tng,putusan_narkoba_15.pdf,1,Indra,Sultan,verified
+p015,pengadilan,Pengadilan Negeri Tangerang,putusan_narkoba_15.pdf,1,Indra,Sultan,verified
+p015,tanggalPutusan,2026-09-03,putusan_narkoba_15.pdf,32,Indra,Sultan,verified
+p015,jenisNarkotika,Metamfetamina (Shabu),putusan_narkoba_15.pdf,2,Indra,Sultan,verified
+p015,beratBarangBuktiGram,1.41,putusan_narkoba_15.pdf,2,Indra,Sultan,verified
+p015,pasalTerbukti,Pasal 114 ayat (1) Undang-Undang Republik Indonesia Nomor 35 Tahun 2009 tentang Narkotika jo. Pasal 132 ayat (1),putusan_narkoba_15.pdf,30,Indra,Sultan,verified
+p015,tuntutanBulan,60,putusan_narkoba_15.pdf,2,Indra,Sultan,verified
+p015,vonisBulan,60,putusan_narkoba_15.pdf,30,Indra,Sultan,verified
+p015,dendaRupiah,1000000000,putusan_narkoba_15.pdf,30,Indra,Sultan,verified
+p016,nomorPerkara,119/Pid.Sus/2025/PN Tng,putusan_narkoba_triono.pdf,1,Indra,Sultan,verified
+p016,pengadilan,Pengadilan Negeri Tangerang,putusan_narkoba_triono.pdf,1,Indra,Sultan,verified
+p016,tanggalPutusan,2025-08-14,putusan_narkoba_triono.pdf,1,Indra,Sultan,verified
+p016,jenisNarkotika,Metamfetamina (Sabu),putusan_narkoba_triono.pdf,1,Indra,Sultan,verified
+p016,beratBarangBuktiGram,3.23,putusan_narkoba_triono.pdf,1,Indra,Sultan,verified
+p016,pasalTerbukti,Pasal 114 ayat (1) jo. Pasal 132 ayat (1) Undang-Undang Republik Indonesia Nomor 35 Tahun 2009 tentang Narkotika,putusan_narkoba_triono.pdf,1,Indra,Sultan,verified
+p016,tuntutanBulan,96,putusan_narkoba_triono.pdf,1,Indra,Sultan,verified
+p016,vonisBulan,84,putusan_narkoba_triono.pdf,1,Indra,Sultan,verified
+p016,dendaRupiah,1000000000,putusan_narkoba_triono.pdf,1,Indra,Sultan,verified
+p017,nomorPerkara,1109/Pid.Sus/2026/PN Tng,putusan_narkoba_17.pdf,1,Indra,Sultan,verified
+p017,pengadilan,Pengadilan Negeri Tangerang,putusan_narkoba_17.pdf,1,Indra,Sultan,verified
+p017,tanggalPutusan,2026-09-07,putusan_narkoba_17.pdf,43,Indra,Sultan,verified
+p017,jenisNarkotika,Etomidate,putusan_narkoba_17.pdf,3,Indra,Sultan,verified
+p017,beratBarangBuktiGram,52.46,putusan_narkoba_17.pdf,6,Indra,Sultan,verified
+p017,pasalTerbukti,Pasal 609 ayat (2) huruf b Undang-Undang Republik Indonesia Nomor 1 Tahun 2023 tentang Kitab Undang-Undang Hukum Pidana jo. Undang-Undang Nomor 1 Tahun 2026 tentang Penyesuaian Pidana,putusan_narkoba_17.pdf,42,Indra,Sultan,verified
+p017,tuntutanBulan,78,putusan_narkoba_17.pdf,2,Indra,Sultan,verified
+p017,vonisBulan,78,putusan_narkoba_17.pdf,42,Indra,Sultan,verified
+p017,dendaRupiah,1000000000,putusan_narkoba_17.pdf,42,Indra,Sultan,verified
+p018,nomorPerkara,1213/Pid.Sus/2026/PN Tng,putusan_narkoba_18.pdf,1,Indra,Sultan,verified
+p018,pengadilan,Pengadilan Negeri Tangerang,putusan_narkoba_18.pdf,1,Indra,Sultan,verified
+p018,tanggalPutusan,2026-09-03,putusan_narkoba_18.pdf,34,Indra,Sultan,verified
+p018,jenisNarkotika,Metamfetamina (Shabu),putusan_narkoba_18.pdf,2,Indra,Sultan,verified
+p018,beratBarangBuktiGram,1.41,putusan_narkoba_18.pdf,2,Indra,Sultan,verified
+p018,pasalTerbukti,Pasal 114 ayat (2) juncto Pasal 132 ayat (1) Undang-Undang Republik Indonesia Nomor 35 Tahun 2009 tentang Narkotika sebagaimana telah diubah dalam Lampiran II Undang-Undang RI Nomor 1 Tahun 2026 tentang Penyesuaian Pidana,putusan_narkoba_18.pdf,32,Indra,Sultan,verified
+p018,tuntutanBulan,60,putusan_narkoba_18.pdf,2,Indra,Sultan,verified
+p018,vonisBulan,60,putusan_narkoba_18.pdf,32,Indra,Sultan,verified
+p018,dendaRupiah,1000000000,putusan_narkoba_18.pdf,32,Indra,Sultan,verified
+p019,nomorPerkara,1049/Pid.Sus/2026/PN Tng,putusan_narkoba_19.pdf,1,Indra,Sultan,verified
+p019,pengadilan,Pengadilan Negeri Tangerang,putusan_narkoba_19.pdf,1,Indra,Sultan,verified
+p019,tanggalPutusan,2026-09-03,putusan_narkoba_19.pdf,49,Indra,Sultan,verified
+p019,jenisNarkotika,Metamfetamina (Shabu); MDMA (Ekstasi),putusan_narkoba_19.pdf,10,Indra,Sultan,verified
+p019,beratBarangBuktiGram,78.90,putusan_narkoba_19.pdf,3,Indra,Sultan,verified
+p019,pasalTerbukti,Pasal 114 Ayat (2) Undang-Undang RI No. 35 Tahun 2009 tentang Narkotika Jo. UU No. 1 Tahun 2026 tentang Penyesuaian Pidana Jo. Pasal 132 Ayat (1) UU RI No. 35 Tahun 2009 tentang Narkotika,putusan_narkoba_19.pdf,45,Indra,Sultan,verified
+p019,tuntutanBulan,108,putusan_narkoba_19.pdf,2,Indra,Sultan,verified
+p019,vonisBulan,84,putusan_narkoba_19.pdf,47,Indra,Sultan,verified
+p019,dendaRupiah,1000000000,putusan_narkoba_19.pdf,47,Indra,Sultan,verified
+p020,nomorPerkara,1216/Pid.Sus/2026/PN Tng,putusan_narkoba_20.pdf,1,Indra,Sultan,verified
+p020,pengadilan,Pengadilan Negeri Tangerang,putusan_narkoba_20.pdf,1,Indra,Sultan,verified
+p020,tanggalPutusan,2026-09-03,putusan_narkoba_20.pdf,34,Indra,Sultan,verified
+p020,jenisNarkotika,Metamfetamina (Shabu),putusan_narkoba_20.pdf,7,Indra,Sultan,verified
+p020,beratBarangBuktiGram,0.98,putusan_narkoba_20.pdf,2,Indra,Sultan,verified
+p020,pasalTerbukti,Pasal 114 ayat (1) Jo. Pasal 132 ayat (1) Undang-Undang RI Nomor 35 Tahun 2009 tentang Narkotika Jo. Lampiran II UU RI Nomor 1 Tahun 2026 tentang Penyesuaian Pidana,putusan_narkoba_20.pdf,33,Indra,Sultan,verified
+p020,tuntutanBulan,90,putusan_narkoba_20.pdf,2,Indra,Sultan,verified
+p020,vonisBulan,84,putusan_narkoba_20.pdf,33,Indra,Sultan,verified
+p020,dendaRupiah,1100000000,putusan_narkoba_20.pdf,33,Indra,Sultan,verified
+p021,nomorPerkara,194/Pid.Sus/2024/PN.Tng,putusan_narkoba_21_2.pdf,1,Indra,Sultan,verified
+p021,pengadilan,Pengadilan Negeri Tangerang,putusan_narkoba_21_2.pdf,1,Indra,Sultan,verified
+p021,tanggalPutusan,2024-07-10,putusan_narkoba_21_2.pdf,12,Indra,Sultan,verified
+p021,jenisNarkotika,Ekstasi,putusan_narkoba_21_2.pdf,2,Indra,Sultan,verified
+p021,beratBarangBuktiGram,2.45,putusan_narkoba_21_2.pdf,2,Indra,Sultan,verified
+p021,pasalTerbukti,Pasal 112 ayat (1) Undang-Undang Republik Indonesia Nomor 35 Tahun 2009 tentang Narkotika,putusan_narkoba_21_2.pdf,11,Indra,Sultan,verified
+p021,tuntutanBulan,48,putusan_narkoba_21_2.pdf,8,Indra,Sultan,verified
+p021,vonisBulan,36,putusan_narkoba_21_2.pdf,12,Indra,Sultan,verified
+p021,dendaRupiah,800000000,putusan_narkoba_21_2.pdf,12,Indra,Sultan,verified
+p022,nomorPerkara,264/Pid.Sus/2024/PN Tng,putusan_narkoba_22.pdf,1,Indra,Sultan,verified
+p022,pengadilan,Pengadilan Negeri Tangerang,putusan_narkoba_22.pdf,1,Indra,Sultan,verified
+p022,tanggalPutusan,2024-04-03,putusan_narkoba_22.pdf,20,Indra,Sultan,verified
+p022,jenisNarkotika,Metamfetamina (Shabu),putusan_narkoba_22.pdf,2,Indra,Sultan,verified
+p022,beratBarangBuktiGram,1.7735,putusan_narkoba_22.pdf,2,Indra,Sultan,verified
+p022,pasalTerbukti,Pasal 112 ayat (1) Undang-Undang Republik Indonesia Nomor 35 Tahun 2009 tentang Narkotika,putusan_narkoba_22.pdf,17,Indra,Sultan,verified
+p022,tuntutanBulan,72,putusan_narkoba_22.pdf,2,Indra,Sultan,verified
+p022,vonisBulan,66,putusan_narkoba_22.pdf,19,Indra,Sultan,verified
+p022,dendaRupiah,1000000000,putusan_narkoba_22.pdf,19,Indra,Sultan,verified
+p023,nomorPerkara,353/Pid.Sus/2025/PN-Tng,putusan_narkoba_23.pdf,1,Indra,Sultan,verified
+p023,pengadilan,Pengadilan Negeri Tangerang,putusan_narkoba_23.pdf,1,Indra,Sultan,verified
+p023,tanggalPutusan,2025-05-27,putusan_narkoba_23.pdf,16,Indra,Sultan,verified
+p023,jenisNarkotika,Ganja (Cannabis),putusan_narkoba_23.pdf,2,Indra,Sultan,verified
+p023,beratBarangBuktiGram,14.4538,putusan_narkoba_23.pdf,5,Indra,Sultan,verified
+p023,pasalTerbukti,Pasal 111 ayat (1) jo. Pasal 132 ayat (1) Undang-Undang Republik Indonesia Nomor 35 Tahun 2009 tentang Narkotika,putusan_narkoba_23.pdf,14,Indra,Sultan,verified
+p023,tuntutanBulan,72,putusan_narkoba_23.pdf,2,Indra,Sultan,verified
+p023,vonisBulan,51,putusan_narkoba_23.pdf,16,Indra,Sultan,verified
+p023,dendaRupiah,2000000000,putusan_narkoba_23.pdf,16,Indra,Sultan,verified
+p024,nomorPerkara,461/Pid.Sus/2024/PN Tng,putusan_narkoba_24.pdf,1,Indra,Sultan,verified
+p024,pengadilan,Pengadilan Negeri Tangerang,putusan_narkoba_24.pdf,1,Indra,Sultan,verified
+p024,tanggalPutusan,2024-06-11,putusan_narkoba_24.pdf,23,Indra,Sultan,verified
+p024,jenisNarkotika,Metamfetamina (Shabu),putusan_narkoba_24.pdf,2,Indra,Sultan,verified
+p024,beratBarangBuktiGram,2.62678,putusan_narkoba_24.pdf,2,Indra,Sultan,verified
+p024,pasalTerbukti,Pasal 114 ayat (1) Undang-Undang Republik Indonesia Nomor 35 Tahun 2009 tentang Narkotika,putusan_narkoba_24.pdf,19,Indra,Sultan,verified
+p024,tuntutanBulan,96,putusan_narkoba_24.pdf,2,Indra,Sultan,verified
+p024,vonisBulan,84,putusan_narkoba_24.pdf,22,Indra,Sultan,verified
+p024,dendaRupiah,1000000000,putusan_narkoba_24.pdf,22,Indra,Sultan,verified
+p025,nomorPerkara,465 PK/Pid.Sus/2022,putusan_narkoba_25.pdf,1,Indra,Sultan,verified
+p025,pengadilan,Pengadilan Negeri Tangerang,putusan_narkoba_25.pdf,1,Indra,Sultan,verified
+p025,tanggalPutusan,2022-06-15,putusan_narkoba_25.pdf,7,Indra,Sultan,verified
+p025,jenisNarkotika,Ekstasi,putusan_narkoba_25.pdf,2,Indra,Sultan,verified
+p025,beratBarangBuktiGram,5.4353,putusan_narkoba_25.pdf,2,Indra,Sultan,verified
+p025,pasalTerbukti,Pasal 112 ayat (2) Undang-Undang Republik Indonesia Nomor 35 Tahun 2009 tentang Narkotika,putusan_narkoba_25.pdf,3,Indra,Sultan,verified
+p025,tuntutanBulan,150,putusan_narkoba_25.pdf,2,Indra,Sultan,verified
+p025,vonisBulan,132,putusan_narkoba_25.pdf,3,Indra,Sultan,verified
+p025,dendaRupiah,1000000000,putusan_narkoba_25.pdf,3,Indra,Sultan,verified
