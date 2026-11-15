@@ -1,5 +1,5 @@
-public class ArrayDinamis {
-    private Putusan[] data;
+public class ArrayDinamis<T> implements StrukturData<T> {
+    private Object[] data;
     private int jumlah;
 
     public ArrayDinamis() {
@@ -10,20 +10,116 @@ public class ArrayDinamis {
         if (kapasitasAwal <= 0) {
             kapasitasAwal = 10;
         }
-        this.data = new Putusan[kapasitasAwal];
+        this.data = new Object[kapasitasAwal];
         this.jumlah = 0;
     }
 
-    public void tambah(Putusan item) {
+    // --- Implementasi Kontrak StrukturData<T> ---
+
+    @Override
+    public void add(T element) {
+        if (element == null) {
+            throw new IllegalArgumentException("Elemen tidak boleh null");
+        }
         if (jumlah == data.length) {
             perbesarKapasitas();
         }
-        data[jumlah++] = item;
+        data[jumlah++] = element;
     }
 
-    public void sisipkan(int indeks, Putusan item) {
+    @Override
+    @SuppressWarnings("unchecked")
+    public T get(int index) {
+        if (index < 0 || index >= jumlah) {
+            throw new IndexOutOfBoundsException("Indeks tidak valid: " + index);
+        }
+        return (T) data[index];
+    }
+
+    @Override
+    @SuppressWarnings("unchecked")
+    public T remove(int index) {
+        if (index < 0 || index >= jumlah) {
+            throw new IndexOutOfBoundsException("Indeks tidak valid: " + index);
+        }
+        T terhapus = (T) data[index];
+        for (int i = index; i < jumlah - 1; i++) {
+            data[i] = data[i + 1];
+        }
+        data[--jumlah] = null;
+        return terhapus;
+    }
+
+    @Override
+    public int size() {
+        return jumlah;
+    }
+
+    @Override
+    public boolean isEmpty() {
+        return jumlah == 0;
+    }
+
+    @Override
+    public boolean contains(T element) {
+        if (element == null) {
+            return false;
+        }
+        for (int i = 0; i < jumlah; i++) {
+            if (data[i].equals(element)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override
+    public void clear() {
+        for (int i = 0; i < jumlah; i++) {
+            data[i] = null;
+        }
+        jumlah = 0;
+    }
+
+    @Override
+    public boolean validateInvariant() {
+        if (data == null || data.length <= 0) {
+            return false;
+        }
+        if (jumlah < 0 || jumlah > data.length) {
+            return false;
+        }
+        for (int i = 0; i < jumlah; i++) {
+            if (data[i] == null) {
+                return false;
+            }
+        }
+        for (int i = jumlah; i < data.length; i++) {
+            if (data[i] != null) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    // --- Operasi Tambahan & Alias Kompatibilitas ---
+
+    public void set(int index, T element) {
+        if (index < 0 || index >= jumlah) {
+            throw new IndexOutOfBoundsException("Indeks tidak valid: " + index);
+        }
+        if (element == null) {
+            throw new IllegalArgumentException("Elemen tidak boleh null");
+        }
+        data[index] = element;
+    }
+
+    public void sisipkan(int indeks, T item) {
         if (indeks < 0 || indeks > jumlah) {
             throw new IndexOutOfBoundsException("Indeks di luar batas: " + indeks);
+        }
+        if (item == null) {
+            throw new IllegalArgumentException("Elemen tidak boleh null");
         }
         if (jumlah == data.length) {
             perbesarKapasitas();
@@ -35,37 +131,28 @@ public class ArrayDinamis {
         jumlah++;
     }
 
-    public Putusan ambil(int indeks) {
-        if (indeks < 0 || indeks >= jumlah) {
-            throw new IndexOutOfBoundsException("Indeks tidak valid: " + indeks);
+    public ArrayDinamis<T> salin() {
+        ArrayDinamis<T> salinan = new ArrayDinamis<>(this.data.length);
+        for (int i = 0; i < this.jumlah; i++) {
+            salinan.add(this.get(i));
         }
-        return data[indeks];
+        return salinan;
     }
 
-    public Putusan hapusPada(int indeks) {
-        if (indeks < 0 || indeks >= jumlah) {
-            throw new IndexOutOfBoundsException("Indeks tidak valid: " + indeks);
-        }
-        Putusan terhapus = data[indeks];
-        for (int i = indeks; i < jumlah - 1; i++) {
-            data[i] = data[i + 1];
-        }
-        data[--jumlah] = null;
-        return terhapus;
+    public void tambah(T item) {
+        add(item);
     }
 
-    public int cariIndeksByCaseId(String caseId) {
-        if (caseId == null) return -1;
-        for (int i = 0; i < jumlah; i++) {
-            if (data[i].getCaseId().equalsIgnoreCase(caseId.trim())) {
-                return i;
-            }
-        }
-        return -1;
+    public T ambil(int indeks) {
+        return get(indeks);
+    }
+
+    public T hapusPada(int indeks) {
+        return remove(indeks);
     }
 
     public int ukuran() {
-        return jumlah;
+        return size();
     }
 
     public int kapasitas() {
@@ -73,11 +160,11 @@ public class ArrayDinamis {
     }
 
     public boolean kosong() {
-        return jumlah == 0;
+        return isEmpty();
     }
 
     private void perbesarKapasitas() {
-        Putusan[] baru = new Putusan[data.length * 2];
+        Object[] baru = new Object[data.length * 2];
         for (int i = 0; i < jumlah; i++) {
             baru[i] = data[i];
         }
