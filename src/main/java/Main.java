@@ -20,14 +20,15 @@ public class Main {
             System.out.println("\n=== SISTEM MANAJEMEN PUTUSAN NARKOTIKA (KELOMPOK 27) ===");
             System.out.println("Total Data: " + pengelola.jumlahData() + " | Riwayat Audit: " + pengelola.jumlahRiwayatAudit());
             System.out.println("1. Tampilkan Semua Putusan");
-            System.out.println("2. Cari Putusan berdasarkan Case ID");
+            System.out.println("2. Cari Putusan (Case ID / Nomor Perkara + Hitung Langkah)");
             System.out.println("3. Filter Rentang Vonis (Bulan)");
             System.out.println("4. Filter Jenis Narkotika");
-            System.out.println("5. Filter Multi-Kriteria (Jenis, Vonis & Berat Bukti)");
+            System.out.println("5. Filter Gabungan Lengkap (Jenis, Pasal, Vonis & Rentang Berat)");
             System.out.println("6. Tambah Putusan Baru");
             System.out.println("7. Ubah Lama Vonis Putusan");
             System.out.println("8. Hapus Putusan");
             System.out.println("9. Undo Perubahan Terakhir (Stack Audit)");
+            System.out.println("10. Tampilkan Seluruh Riwayat Audit (Non-Destruktif)");
             System.out.println("0. Keluar");
             System.out.print("Pilih menu: ");
 
@@ -39,13 +40,16 @@ public class Main {
                     break;
 
                 case "2":
-                    System.out.print("Masukkan Case ID (contoh: 1): ");
-                    String cariId = scanner.nextLine().trim();
-                    Putusan p = pengelola.cariByCaseId(cariId);
-                    if (p == null) {
-                        System.out.println("Putusan dengan Case ID '" + cariId + "' tidak ditemukan.");
+                    System.out.print("Masukkan Case ID atau Nomor Perkara: ");
+                    String kataKunci = scanner.nextLine().trim();
+                    PengelolaPutusan.HasilPencarian hasilCari = pengelola.cariDenganLangkah(kataKunci);
+                    if (!hasilCari.ditemukan()) {
+                        System.out.println("Putusan '" + kataKunci + "' tidak ditemukan (diperiksa dalam "
+                                + hasilCari.jumlahLangkah + " langkah).");
                     } else {
-                        cetakDetail(p);
+                        System.out.println("Putusan ditemukan pada indeks " + hasilCari.indeks
+                                + " dalam " + hasilCari.jumlahLangkah + " langkah.");
+                        cetakDetail(hasilCari.putusan);
                     }
                     break;
 
@@ -71,13 +75,18 @@ public class Main {
                     try {
                         System.out.print("Jenis narkotika (kosongkan jika semua): ");
                         String filterJenis = scanner.nextLine().trim();
+                        System.out.print("Pasal terbukti (kosongkan jika semua, contoh: 114): ");
+                        String filterPasal = scanner.nextLine().trim();
                         System.out.print("Vonis minimum (bulan): ");
                         int minVonis = Integer.parseInt(scanner.nextLine().trim());
                         System.out.print("Vonis maksimum (bulan): ");
                         int maxVonis = Integer.parseInt(scanner.nextLine().trim());
                         System.out.print("Berat minimal barang bukti (gram): ");
                         double minBerat = Double.parseDouble(scanner.nextLine().trim());
-                        tampilkanDaftar(pengelola.filterMultiKriteria(filterJenis, minVonis, maxVonis, minBerat));
+                        System.out.print("Berat maksimal barang bukti (gram): ");
+                        double maxBerat = Double.parseDouble(scanner.nextLine().trim());
+                        tampilkanDaftar(pengelola.filterLengkap(
+                                filterJenis, filterPasal, minVonis, maxVonis, minBerat, maxBerat));
                     } catch (NumberFormatException e) {
                         System.out.println("Input angka vonis atau berat tidak valid.");
                     }
@@ -159,6 +168,19 @@ public class Main {
                     } else {
                         pengelola.undo();
                         System.out.println("Undo berhasil untuk aksi: " + terakhir.keterangan);
+                    }
+                    break;
+
+                case "10":
+                    ArrayDinamis<StackAudit.EntriAudit> riwayat = pengelola.getSemuaRiwayatAudit();
+                    if (riwayat.isEmpty()) {
+                        System.out.println("(Riwayat Stack Audit masih kosong)");
+                    } else {
+                        System.out.println("\n--- RIWAYAT AUDIT (URUTAN TOP -> BOTTOM) ---");
+                        for (int i = 0; i < riwayat.size(); i++) {
+                            StackAudit.EntriAudit entri = riwayat.get(i);
+                            System.out.println((i + 1) + ". [" + entri.jenisAksi + "] " + entri.keterangan);
+                        }
                     }
                     break;
 

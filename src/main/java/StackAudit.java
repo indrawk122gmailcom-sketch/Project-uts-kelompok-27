@@ -94,6 +94,27 @@ public class StackAudit<T> implements StrukturData<T> {
     }
 
     @Override
+    public boolean contains(T element) {
+        if (element == null) {
+            return false;
+        }
+        Node<T> current = top;
+        while (current != null) {
+            if (current.data.equals(element)) {
+                return true;
+            }
+            current = current.next;
+        }
+        return false;
+    }
+
+    @Override
+    public void clear() {
+        top = null;
+        ukuran = 0;
+    }
+
+    @Override
     public boolean validateInvariant() {
         if (ukuran < 0) {
             return false;

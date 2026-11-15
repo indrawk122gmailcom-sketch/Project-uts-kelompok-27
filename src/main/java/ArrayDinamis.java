@@ -61,6 +61,27 @@ public class ArrayDinamis<T> implements StrukturData<T> {
     }
 
     @Override
+    public boolean contains(T element) {
+        if (element == null) {
+            return false;
+        }
+        for (int i = 0; i < jumlah; i++) {
+            if (data[i].equals(element)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override
+    public void clear() {
+        for (int i = 0; i < jumlah; i++) {
+            data[i] = null;
+        }
+        jumlah = 0;
+    }
+
+    @Override
     public boolean validateInvariant() {
         if (data == null || data.length <= 0) {
             return false;
@@ -68,13 +89,11 @@ public class ArrayDinamis<T> implements StrukturData<T> {
         if (jumlah < 0 || jumlah > data.length) {
             return false;
         }
-        // Elemen aktif [0 .. jumlah - 1] harus rapat dan tidak boleh null
         for (int i = 0; i < jumlah; i++) {
             if (data[i] == null) {
                 return false;
             }
         }
-        // Slot cadangan [jumlah .. data.length - 1] harus bersih (null)
         for (int i = jumlah; i < data.length; i++) {
             if (data[i] != null) {
                 return false;
