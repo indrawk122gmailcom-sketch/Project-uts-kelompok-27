@@ -1,19 +1,9 @@
-# Laporan Penggunaan Generative AI
+# Catatan Audit Penggunaan AI (`AI_USAGE.md`)
 
-**Kelompok:** 27  
-**Proyek:** UTS Struktur Data - Pengolahan Putusan Narkotika
+Sesuai ketentuan Bagian 6 Panduan Penugasan UTS Struktur Data, seluruh penggunaan alat bantu AI dicatat secara transparan untuk dapat diaudit. Ekstraksi data putusan dari Direktori Putusan Mahkamah Agung, penulisan logika inti aplikasi, serta eksekusi pengujian dilakukan dan diverifikasi secara mandiri oleh anggota kelompok.
 
----
-
-## Catatan Penggunaan AI
-
-| Tanggal | Anggota | Alat AI | Tujuan / Prompt Ringkas | Bagian / Output yang Digunakan | Cara Verifikasi & Penyesuaian |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| YYYY-MM-DD | Nama Anggota | Gemini / ChatGPT | Menanyakan struktur dasar berkas `.gitignore` dan alur Git di IntelliJ | Template `.gitignore` dan perintah dasar Git | Diuji langsung di IntelliJ dan repositori GitHub |
-| YYYY-MM-DD | Nama Anggota | Gemini / ChatGPT | Diskusi konsep representasi Struktur Data tanpa `java.util` | Logika algoritma `validateInvariant()` | Ditulis ulang dan disesuaikan dengan skema generik `T` |
-
----
-
-## Deklarasi Transparansi
-
-Seluruh kode utama, struktur data, pengujian, dan ekstraksi data dipahami serta diverifikasi secara langsung oleh anggota kelompok sesuai kebijakan UTS.
+| Tanggal | Anggota | Alat | Tujuan | Ringkasan Prompt | Bagian Keluaran yang Digunakan | Perubahan yang Dilakukan | Cara Verifikasi |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| 2026-11-14 | Indra Wahyudin Kurniawan | Gemini | Konsultasi desain struktur data manual tanpa `java.util` | Membandingkan mekanisme ekspansi kapasitas `ArrayDinamis` dan struktur *node* `StackAudit` | Pola kerangka method dasar `perbesarKapasitas()` dan simpul `Node` | Menyesuaikan tipe data dan method agar terhubung dengan entitas `Putusan` (17 atribut) serta menambahkan `salin()` (*deep copy*) | Dikompilasi dan diuji melalui skenario 1, 5, dan 6 di `MainTest.java` |
+| 2026-11-14 | Indra Wahyudin Kurniawan | Gemini | Penanganan kasus tepi *parser* CSV | Cara memisahkan kolom CSV yang memiliki tanda koma di dalam tanda kutip tanpa pustaka eksternal | Logika perulangan karakter dengan variabel status `dalamKutip` | Menambahkan pemangkasan spasi (`trim()`) dan dukungan tanda kutip ganda berurutan (`""`) pada `CsvParser.java` | Diuji dengan string CSV berisi koma dalam deskripsi barang bukti pada skenario 7 `MainTest.java` |
+| 2026-11-15 | Indra Wahyudin Kurniawan | Gemini | Penyusunan kerangka dokumentasi & audit Git | Merapikan format penulisan `README.md`, ADR kedua, *trace* manual, serta mengecek kesesuaian alur PR GitHub | Struktur dokumen ADR, tabel *trace* penghapusan, dan format log audit | Mengisi seluruh detail kelas, kompleksitas waktu, pembagian kerja aktual Kelompok 27, serta nomor PR #1–#5 | Diperiksa kesesuaiannya terhadap setiap poin rubrik pada Panduan UTS |

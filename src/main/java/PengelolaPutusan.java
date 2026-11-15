@@ -23,6 +23,7 @@ public class PengelolaPutusan {
         }
     }
 
+<<<<<<< HEAD
     public static class RingkasanAgregasi {
         public final int totalPerkara;
         public final int totalVonisBulan;
@@ -58,6 +59,8 @@ public class PengelolaPutusan {
         }
     }
 
+=======
+>>>>>>> origin/main
     private final ArrayDinamis<Putusan> daftarPutusan;
     private final StackAudit<StackAudit.EntriAudit> riwayatAudit;
 
@@ -310,4 +313,84 @@ public class PengelolaPutusan {
 
         riwayatAudit.push(new StackAudit.EntriAudit(
                 "UBAH_VONIS", sebelum, idx,
+<<<<<<< HEAD
                 "Ubah vonis caseId=" + caseId + " dari " + sebelum.getVonisBulan() + " ke " + vonisBaru + " bulan
+=======
+                "Ubah vonis caseId=" + caseId + " dari " + sebelum.getVonisBulan() + " ke " + vonisBaru + " bulan"
+        ));
+        return true;
+    }
+
+    public boolean hapusPutusan(String caseId) {
+        int idx = cariIndeksByCaseId(caseId);
+        if (idx == -1) {
+            return false;
+        }
+        Putusan terhapus = daftarPutusan.remove(idx);
+        riwayatAudit.push(new StackAudit.EntriAudit(
+                "HAPUS", terhapus.salin(), idx,
+                "Menghapus putusan caseId=" + caseId + " (" + terhapus.getNomorPerkara() + ")"
+        ));
+        return true;
+    }
+
+    public boolean undo() {
+        if (riwayatAudit.isEmpty()) {
+            return false;
+        }
+        StackAudit.EntriAudit aksiTerakhir = riwayatAudit.pop();
+
+        switch (aksiTerakhir.jenisAksi) {
+            case "TAMBAH":
+                int idxHapus = cariIndeksByCaseId(aksiTerakhir.snapshotSebelum.getCaseId());
+                if (idxHapus != -1) {
+                    daftarPutusan.remove(idxHapus);
+                }
+                return true;
+
+            case "UBAH_VONIS":
+                int idxUbah = cariIndeksByCaseId(aksiTerakhir.snapshotSebelum.getCaseId());
+                if (idxUbah != -1) {
+                    daftarPutusan.get(idxUbah).setVonisBulan(aksiTerakhir.snapshotSebelum.getVonisBulan());
+                }
+                return true;
+
+            case "HAPUS":
+                int posisi = Math.min(aksiTerakhir.indeksAsal, daftarPutusan.size());
+                daftarPutusan.sisipkan(posisi, aksiTerakhir.snapshotSebelum);
+                return true;
+
+            default:
+                return false;
+        }
+    }
+
+    public ArrayDinamis<StackAudit.EntriAudit> getSemuaRiwayatAudit() {
+        ArrayDinamis<StackAudit.EntriAudit> daftarAudit = new ArrayDinamis<>(Math.max(4, riwayatAudit.size()));
+        for (int i = 0; i < riwayatAudit.size(); i++) {
+            daftarAudit.add(riwayatAudit.get(i));
+        }
+        return daftarAudit;
+    }
+
+    public boolean validateInvariants() {
+        return daftarPutusan.validateInvariant() && riwayatAudit.validateInvariant();
+    }
+
+    public int jumlahData() {
+        return daftarPutusan.size();
+    }
+
+    public int jumlahRiwayatAudit() {
+        return riwayatAudit.size();
+    }
+
+    public StackAudit.EntriAudit lihatAuditTerakhir() {
+        return riwayatAudit.peek();
+    }
+
+    public ArrayDinamis<Putusan> getSemuaPutusan() {
+        return daftarPutusan;
+    }
+}
+>>>>>>> origin/main
